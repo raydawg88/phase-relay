@@ -1,0 +1,4 @@
+interface:
+  display_name: "PhaseRelay"
+  short_description: "Route projects across the right models and tools"
+  default_prompt: "Use PhaseRelay to build a phase-by-phase model and tool routing plan for this project, execute through available adapters, and record verified outcomes."

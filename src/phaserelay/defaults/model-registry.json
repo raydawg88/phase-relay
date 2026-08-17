@@ -1,0 +1,194 @@
+{
+  "version": "0.2.2",
+  "last_refreshed": "2026-08-17",
+  "refresh_frequency": "daily_light_weekly_deep",
+  "models": [
+    {
+      "provider": "OpenAI",
+      "surface": ["ChatGPT", "Codex", "API", "image/video where available"],
+      "models_or_family": ["GPT-5.6 Sol", "GPT-5.6 Terra", "GPT-5.6 Luna", "GPT Image 2", "realtime/audio models", "Sora where available"],
+      "current_models": [
+        {"model_id": "gpt-5.6-sol", "role": "flagship complex reasoning and coding", "context_tokens": 1050000, "max_output_tokens": 128000, "input_usd_per_mtok": 5, "output_usd_per_mtok": 30, "evidence_tier": "official"},
+        {"model_id": "gpt-5.6-terra", "role": "balanced intelligence and cost", "context_tokens": 1050000, "max_output_tokens": 128000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 12, "evidence_tier": "official"},
+        {"model_id": "gpt-5.6-luna", "role": "cost-sensitive high-volume work", "context_tokens": 1050000, "max_output_tokens": 128000, "input_usd_per_mtok": 0.2, "output_usd_per_mtok": 1.2, "evidence_tier": "official"},
+        {"model_id": "gpt-image-2", "role": "image generation and editing", "evidence_tier": "official"}
+      ],
+      "deprecations": [
+        {"model_id": "gpt-5.3-chat", "status": "deprecated", "evidence_tier": "official"},
+        {"model_id": "gpt-5.2-chat", "status": "deprecated", "evidence_tier": "official"},
+        {"model_id": "gpt-5.2-codex", "status": "deprecated", "evidence_tier": "official"},
+        {"model_id": "sora-2", "status": "deprecated", "evidence_tier": "official"},
+        {"model_id": "sora-2-pro", "status": "deprecated", "evidence_tier": "official"},
+        {"model_id": "gpt-image-1.5", "status": "deprecated", "router_replacement_candidate": "gpt-image-2", "evidence_tier": "official_catalog"},
+        {"model_id": "chatgpt-image-latest", "status": "deprecated", "router_replacement_candidate": "gpt-image-2", "evidence_tier": "official_catalog"},
+        {"model_id": "gpt-image-1-mini", "status": "deprecated", "router_replacement_candidate": "gpt-image-2", "evidence_tier": "official_catalog"},
+        {"model_id": "gpt-image-1", "status": "deprecated", "router_replacement_candidate": "gpt-image-2", "evidence_tier": "official_catalog"},
+        {"model_id": "gpt-realtime", "status": "deprecated", "evidence_tier": "official"},
+        {"model_id": "gpt-audio", "status": "deprecated", "evidence_tier": "official"},
+        {"model_id": "o3-deep-research", "status": "deprecated", "evidence_tier": "official"},
+        {"model_id": "o4-mini-deep-research", "status": "deprecated", "evidence_tier": "official"}
+      ],
+      "primary_sources": [
+        "https://platform.openai.com/docs/models",
+        "https://platform.openai.com/docs/guides/images",
+        "https://chatgpt.com/pricing"
+      ],
+      "default_lanes": ["coding", "planning", "synthesis", "image_analysis", "image_generation"],
+      "confidence": "medium",
+      "status": "active"
+    },
+    {
+      "provider": "Anthropic",
+      "surface": ["Claude", "Claude Code", "API"],
+      "models_or_family": ["Claude Fable 5", "Claude Opus 5", "Claude Opus 4.8", "Claude Sonnet 5", "Claude Haiku 4.5"],
+      "current_models": [
+        {"model_id": "claude-fable-5", "role": "highest available capability and long-running agents", "input_usd_per_mtok": 10, "output_usd_per_mtok": 50, "cache_write_usd_per_mtok": 12.5, "cache_read_usd_per_mtok": 1, "earliest_retirement_date": "2027-06-09", "evidence_tier": "official", "router_status": "candidate_requires_access_probe_and_bakeoff"},
+        {"model_id": "claude-opus-5", "role": "complex agentic coding and enterprise work", "input_usd_per_mtok": 5, "output_usd_per_mtok": 25, "cache_write_usd_per_mtok": 6.25, "cache_read_usd_per_mtok": 0.5, "earliest_retirement_date": "2027-07-24", "evidence_tier": "official", "router_status": "candidate"},
+        {"model_id": "claude-opus-4-8", "role": "prior-generation high-capability agentic work", "earliest_retirement_date": "2027-05-28", "evidence_tier": "official", "router_status": "candidate_requires_access_probe_and_bakeoff"},
+        {"model_id": "claude-sonnet-5", "role": "speed-intelligence balance for coding and agents", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 10, "introductory_pricing_ends": "2026-08-31", "standard_input_usd_per_mtok_after_intro": 3, "standard_output_usd_per_mtok_after_intro": 15, "cache_write_usd_per_mtok": 2.5, "cache_read_usd_per_mtok": 0.2, "tokenizer_note": "approximately 30% more tokens for the same text than the prior tokenizer", "priority_tier_supported": false, "earliest_retirement_date": "2027-06-30", "evidence_tier": "official", "router_status": "candidate"},
+        {"model_id": "claude-haiku-4-5-20251001", "role": "fast cost-efficient work", "input_usd_per_mtok": 1, "output_usd_per_mtok": 5, "cache_write_usd_per_mtok": 1.25, "cache_read_usd_per_mtok": 0.1, "earliest_retirement_date": "2026-10-15", "evidence_tier": "official"}
+      ],
+      "deprecations": [
+        {"model_id": "claude-opus-4-1-20250805", "status": "deprecated", "retirement_date": "2026-08-05", "evidence_tier": "official"},
+        {"model_id": "claude-opus-4-20250514", "status": "retired", "retirement_date": "2026-06-15", "evidence_tier": "official"},
+        {"model_id": "claude-sonnet-4-20250514", "status": "retired", "retirement_date": "2026-06-15", "evidence_tier": "official"}
+      ],
+      "primary_sources": [
+        "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+        "https://www.anthropic.com/pricing",
+        "https://docs.anthropic.com/en/docs/claude-code/overview"
+      ],
+      "default_lanes": ["coding", "strategy", "creative_writing", "product_planning", "synthesis"],
+      "confidence": "high_for_execution_adapter_medium_for_family_defaults",
+      "status": "active"
+    },
+    {
+      "provider": "Google",
+      "surface": ["Gemini", "Gemini API", "Vertex AI", "Flow/Veo where available"],
+      "models_or_family": ["Gemini 3.6 Flash", "Gemini 3.5 Flash", "Gemini 3.5 Flash-Lite", "Gemini 3.1 Pro", "Nano Banana 2 family", "Gemini Omni Flash", "Veo", "Lyria 3.5"],
+      "current_models": [
+        {"model_id": "gemini-3.6-flash", "role": "recommended computer-use and agent model", "api_notes": ["temperature, top_p, and top_k are deprecated", "prefilled model turns are unsupported"], "router_status": "candidate", "evidence_tier": "official"},
+        {"model_id": "gemini-3.5-flash", "role": "stable agentic coding and multimodal analysis", "context_tokens": 1048576, "max_output_tokens": 65536, "router_status": "candidate", "evidence_tier": "official"},
+        {"model_id": "gemini-3.5-flash-lite", "role": "low-latency cost-efficient agent work", "api_notes": ["temperature, top_p, and top_k are deprecated", "prefilled model turns are unsupported"], "router_status": "candidate", "evidence_tier": "official"},
+        {"model_id": "gemini-3.1-flash-image", "role": "stable image generation and editing", "router_status": "candidate", "evidence_tier": "official"},
+        {"model_id": "gemini-omni-flash", "role": "conversational video generation and editing", "router_status": "candidate", "evidence_tier": "official"}
+      ],
+      "deprecations": [
+        {"model_id": "gemini-3-flash-preview", "recommended_replacement": "gemini-3.6-flash", "evidence_tier": "official"},
+        {"model_id": "gemini-2.0-flash", "shutdown_date": "2026-06-01", "recommended_replacement": "gemini-3.6-flash", "evidence_tier": "official"},
+        {"model_id": "gemini-2.0-flash-lite", "shutdown_date": "2026-06-01", "recommended_replacement": "gemini-3.1-flash-lite", "evidence_tier": "official"},
+        {"model_id": "imagen-4.0-generate-001", "shutdown_date": "2026-08-17", "recommended_replacement": "gemini-3.1-flash-image", "evidence_tier": "official"},
+        {"model_id": "imagen-4.0-ultra-generate-001", "shutdown_date": "2026-08-17", "recommended_replacement": "gemini-3.1-flash-image", "evidence_tier": "official"},
+        {"model_id": "imagen-4.0-fast-generate-001", "shutdown_date": "2026-08-17", "recommended_replacement": "gemini-3.1-flash-image", "evidence_tier": "official"},
+        {"model_id": "veo-3.0-generate-001", "shutdown_date": "2026-06-30", "recommended_replacement": "veo-3.1-generate-preview", "evidence_tier": "official"},
+        {"model_id": "veo-3.0-fast-generate-001", "shutdown_date": "2026-06-30", "recommended_replacement": "veo-3.1-fast-generate-preview", "evidence_tier": "official"},
+        {"model_id": "gemini-robotics-er-1.6-preview", "shutdown_date": "2026-08-31", "recommended_replacement": "gemini-robotics-er-2-preview", "evidence_tier": "official"}
+      ],
+      "primary_sources": [
+        "https://ai.google.dev/gemini-api/docs/models",
+        "https://ai.google.dev/gemini-api/docs/video-understanding",
+        "https://ai.google.dev/gemini-api/docs/long-context",
+        "https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/video-understanding"
+      ],
+      "default_lanes": ["video_analysis", "long_context", "multimodal_analysis", "video_generation"],
+      "confidence": "medium",
+      "status": "active"
+    },
+    {
+      "provider": "Perplexity",
+      "surface": ["Perplexity app", "Sonar API"],
+      "models_or_family": ["Perplexity Pro models", "Sonar"],
+      "current_models": [
+        {"model_id": "sonar", "role": "quick grounded search", "context_tokens": 128000, "router_status": "active_candidate_for_source_discovery", "evidence_tier": "official"},
+        {"model_id": "sonar-pro", "role": "advanced grounded search and follow-ups", "router_status": "candidate", "evidence_tier": "official"},
+        {"model_id": "sonar-reasoning-pro", "role": "multi-step sourced reasoning", "router_status": "candidate", "evidence_tier": "official"},
+        {"model_id": "sonar-deep-research", "role": "exhaustive web research reports", "router_status": "candidate", "evidence_tier": "official"}
+      ],
+      "primary_sources": [
+        "https://www.perplexity.ai/pro",
+        "https://docs.perplexity.ai/",
+        "https://www.perplexity.ai/help-center"
+      ],
+      "default_lanes": ["source_research", "customer_research", "market_scan", "citation_gathering"],
+      "confidence": "medium",
+      "status": "active"
+    },
+    {
+      "provider": "xAI",
+      "surface": ["Grok", "xAI API if enabled", "GitHub Copilot where enabled"],
+      "models_or_family": ["Grok 4.5", "Grok Imagine Video 1.5", "Grok Voice"],
+      "current_models": [
+        {"model_id": "grok-4.5", "role": "coding agentic tasks and knowledge work", "context_tokens": 500000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 6, "router_status": "candidate_requires_account_access_check_and_bakeoff", "evidence_tier": "official"},
+        {"model_id": "grok-imagine-video-1.5", "role": "image-to-video with synchronized audio", "router_status": "candidate", "evidence_tier": "official"}
+      ],
+      "primary_sources": [
+        "https://docs.x.ai/docs/models",
+        "https://grok.com/plans"
+      ],
+      "default_lanes": ["social_pulse", "alternate_brainstorm"],
+      "confidence": "low",
+      "status": "candidate_requires_access_check"
+    },
+    {
+      "provider": "Open-weight and hosted open models",
+      "surface": ["OpenRouter", "Together", "Fireworks", "Hugging Face", "Replicate", "local Ollama/LM Studio/vLLM"],
+      "models_or_family": ["Llama", "Qwen", "DeepSeek", "Mistral", "Kimi", "GLM", "Flux", "Ideogram"],
+      "current_candidates": [
+        {"model_id": "Qwen/Qwen3.6-35B-A3B", "role": "efficient local or hosted agentic work", "evidence_tier": "official_model_repository"},
+        {"model_id": "Qwen/Qwen3.6-27B", "role": "local general reasoning and coding", "evidence_tier": "official_model_repository"},
+        {"model_id": "mistral-medium-3-5", "role": "open-weight multimodal agentic and coding work with adjustable reasoning", "router_status": "candidate_requires_hosting_or_api_access_check_and_bakeoff", "evidence_tier": "official"},
+        {"model_id": "mistral-small-2603", "role": "efficient open-weight multimodal instruct reasoning and coding with 256K context", "context_tokens": 256000, "router_status": "candidate_requires_hosting_or_api_access_check_and_bakeoff", "evidence_tier": "official"},
+        {"model_id": "ideogram-4.0", "role": "open-weight typography layout and brand-oriented image generation", "parameters": "9.3B", "max_resolution": "2048px per side", "evidence_tier": "official"},
+        {"model_id": "mistral-ocr-4", "role": "document intelligence", "evidence_tier": "official"},
+        {"model_id": "leanstral-1.5", "role": "formal proof and reasoning", "evidence_tier": "official"}
+      ],
+      "primary_sources": [
+        "https://openrouter.ai/docs",
+        "https://docs.together.ai/",
+        "https://docs.fireworks.ai/",
+        "https://huggingface.co/docs/inference-providers",
+        "https://replicate.com/docs"
+      ],
+      "default_lanes": ["batch_extraction", "private_preprocessing", "cheap_second_opinion", "media_trials"],
+      "confidence": "low",
+      "status": "candidate"
+    },
+    {
+      "provider": "Cross-provider media routers",
+      "surface": ["OpenRouter Image API", "OpenRouter Video API", "Runway MCP", "Runway Agent"],
+      "models_or_family": ["Runway Gen-4.5", "Runway Aleph 2.0", "Seedance 2.0", "Kling 3.0", "GPT Image 2", "Nano Banana", "provider-routed video models"],
+      "primary_sources": [
+        "https://openrouter.ai/blog/announcements/image-api/",
+        "https://openrouter.ai/blog/announcements/video-generation/",
+        "https://runwayml.com/news/company-news/mcp",
+        "https://runwayml.com/news/introducing-aleph-2-and-edit-studio"
+      ],
+      "default_lanes": ["media_generation_candidate", "video_editing_candidate", "agent_media_handoff_candidate"],
+      "confidence": "medium",
+      "status": "candidate_requires_signup_or_connector_check"
+    },
+    {
+      "provider": "Cross-provider telemetry and routing controls",
+      "surface": ["OpenRouter Classifiers", "OpenRouter routing logs"],
+      "models_or_family": ["request classifiers and cost tracking"],
+      "primary_sources": [
+        "https://openrouter.ai/blog/announcements/classifiers/"
+      ],
+      "default_lanes": ["telemetry_candidate", "usage_classification_candidate"],
+      "confidence": "medium",
+      "status": "candidate_requires_signup_and_privacy_review"
+    },
+    {
+      "provider": "Cross-provider model orchestration",
+      "surface": ["OpenRouter Subagent", "OpenRouter Advisor", "OpenRouter MCP Server"],
+      "models_or_family": ["frontier-to-cheap subagent delegation", "cheap-to-frontier escalation", "live catalog and test inference"],
+      "primary_sources": [
+        "https://openrouter.ai/blog/announcements/",
+        "https://openrouter.ai/docs"
+      ],
+      "default_lanes": ["orchestration_candidate", "cheap_worker_candidate", "conditional_escalation_candidate", "catalog_probe_candidate"],
+      "confidence": "medium",
+      "status": "candidate_requires_signup_security_review_and_bakeoff"
+    }
+  ]
+}

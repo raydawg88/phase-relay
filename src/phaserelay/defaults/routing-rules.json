@@ -1,0 +1,82 @@
+{
+  "version": "0.1.0",
+  "last_checked": "2026-08-17",
+  "principle": "Route by operation, not by whole task. Use retrieval tools for sources, deterministic tools for computation, frontier models for judgment, multimodal models for media, and cheap/local models for batch extraction.",
+  "lanes": {
+    "source_research": {
+      "primary": ["Perplexity", "web_search"],
+      "secondary": ["ChatGPT search", "Gemini web"],
+      "avoid": ["frontier model as first-pass scraper"],
+      "verification": "Open cited sources and confirm dates, domains, and primary-source status."
+    },
+    "video_analysis": {
+      "primary": ["Gemini"],
+      "secondary": ["GPT multimodal for short clips", "ffmpeg frame extraction plus vision model"],
+      "avoid": ["claiming every-frame analysis without explicit frame extraction or documented FPS"],
+      "verification": "Record upload/API mode and sampling; extract frames for frame-level critique."
+    },
+    "visual_design": {
+      "primary": ["GPT vision", "Gemini", "Claude vision where available"],
+      "secondary": ["Claude/GPT for critique after visual inventory"],
+      "avoid": ["text-only critique from sparse alt text"],
+      "verification": "Separate observed facts from critique and compare against references."
+    },
+    "coding": {
+      "primary": ["Codex frontier", "Claude Code"],
+      "secondary": ["Qwen Coder", "DeepSeek", "Mistral for extraction/review"],
+      "avoid": ["premium model for raw log reading or deterministic search"],
+      "verification": "Run targeted tests/build/smoke and inspect diffs."
+    },
+    "strategy": {
+      "primary": ["Claude frontier", "GPT frontier"],
+      "secondary": ["Gemini long-context support"],
+      "avoid": ["retrieval model as final strategist"],
+      "verification": "Label assumptions, decisions, and evidence separately."
+    },
+    "finance_accounting": {
+      "primary": ["deterministic spreadsheet/Python", "GPT or Claude explanation"],
+      "secondary": ["Perplexity for sourced rules"],
+      "avoid": ["LLM mental math", "uncited current tax/legal/accounting claims"],
+      "verification": "Reconcile calculations deterministically and check authoritative sources."
+    },
+    "batch_private": {
+      "primary": ["local/open models", "Whisper/local transcription", "scripts"],
+      "secondary": ["frontier synthesis on distilled outputs"],
+      "avoid": ["frontier model over every raw private segment"],
+      "verification": "Retain raw artifacts and sample-check extractions."
+    },
+    "media_generation": {
+      "primary": ["specialized image/video tools"],
+      "secondary": ["OpenAI image", "Flux", "Midjourney", "Ideogram", "Runway", "Kling", "Higgsfield", "Veo/Flow", "Sora"],
+      "avoid": ["using chat model as if it renders media"],
+      "verification": "Render samples and score actual output for motion, fidelity, text, faces, and editability."
+    }
+  },
+  "planning_template": [
+    "Source gathering",
+    "Extraction/normalization",
+    "Visual/video analysis",
+    "Implementation",
+    "Synthesis/final judgment",
+    "Verification",
+    "Token guardrail"
+  ],
+  "signup_candidates": [
+    {
+      "name": "OpenRouter",
+      "reason": "One API to test many frontier and open models for routing bakeoffs."
+    },
+    {
+      "name": "Perplexity Pro/Sonar API",
+      "reason": "Strong source/citation layer for customer and market research."
+    },
+    {
+      "name": "Together or Fireworks",
+      "reason": "Hosted open-weight models for cheaper extraction and batch preprocessing."
+    },
+    {
+      "name": "Replicate",
+      "reason": "Fast trials of media and open models without local setup."
+    }
+  ]
+}
