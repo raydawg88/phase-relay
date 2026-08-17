@@ -1,0 +1,5 @@
+workflow,subtask,provider,model_or_tool,surface,score,confidence,uses,successes,failures,last_used,last_updated,status,notes
+Customer research,source discovery and citation gathering,Perplexity,Perplexity app or Sonar,app/API,60,medium,0,0,0,,2026-08-15,hypothesis,Sourced retrieval default until bakeoff data exists
+Video analysis,native first-pass visual/audio understanding,Google,Gemini,app/API,65,medium,0,0,0,,2026-08-15,official_hypothesis,Native video default but frame-level claims require explicit frame extraction or documented FPS
+Coding,architecture/debug judgment,OpenAI/Anthropic,Codex GPT frontier or Claude Code,agent,60,medium,0,0,0,,2026-08-15,hypothesis,Use deterministic tooling first then premium agent reasoning
+Finance/accounting,spreadsheet/account analysis,Deterministic tools,Python/spreadsheet tools,local,75,high,0,0,0,,2026-08-15,actionable,Numbers should be computed deterministically before model explanation

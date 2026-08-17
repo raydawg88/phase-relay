@@ -9,5 +9,3 @@ dist/
 venv/
 .DS_Store
 .phaserelay/
-telemetry/
-
