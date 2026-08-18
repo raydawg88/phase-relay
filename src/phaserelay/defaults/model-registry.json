@@ -1,16 +1,19 @@
 {
-  "version": "0.2.2",
-  "last_refreshed": "2026-08-17",
+  "version": "0.2.3",
+  "last_refreshed": "2026-08-18",
   "refresh_frequency": "daily_light_weekly_deep",
   "models": [
     {
       "provider": "OpenAI",
       "surface": ["ChatGPT", "Codex", "API", "image/video where available"],
-      "models_or_family": ["GPT-5.6 Sol", "GPT-5.6 Terra", "GPT-5.6 Luna", "GPT Image 2", "realtime/audio models", "Sora where available"],
+      "models_or_family": ["GPT-5.6 Sol", "GPT-5.6 Terra", "GPT-5.6 Luna", "GPT-5.6 Cyber", "Daybreak", "GPT Image 2", "realtime/audio models", "Sora where available"],
       "current_models": [
         {"model_id": "gpt-5.6-sol", "role": "flagship complex reasoning and coding", "context_tokens": 1050000, "max_output_tokens": 128000, "input_usd_per_mtok": 5, "output_usd_per_mtok": 30, "evidence_tier": "official"},
         {"model_id": "gpt-5.6-terra", "role": "balanced intelligence and cost", "context_tokens": 1050000, "max_output_tokens": 128000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 12, "evidence_tier": "official"},
         {"model_id": "gpt-5.6-luna", "role": "cost-sensitive high-volume work", "context_tokens": 1050000, "max_output_tokens": 128000, "input_usd_per_mtok": 0.2, "output_usd_per_mtok": 1.2, "evidence_tier": "official"},
+        {"model_id": "gpt-5.6-cyber", "role": "authorized cybersecurity research and security testing", "context_tokens": 400000, "max_output_tokens": 128000, "input_usd_per_mtok": 12.5, "output_usd_per_mtok": 75, "router_status": "candidate_requires_daybreak_approval_and_security_scope", "evidence_tier": "official"},
+        {"model_id": "daybreak-red-latest", "role": "alias for advanced approved cybersecurity models", "router_status": "candidate_requires_daybreak_approval_and_security_scope", "evidence_tier": "official"},
+        {"model_id": "daybreak-blue-latest", "role": "safeguarded frontier models for defensive cybersecurity", "router_status": "candidate_requires_daybreak_approval_and_security_scope", "evidence_tier": "official"},
         {"model_id": "gpt-image-2", "role": "image generation and editing", "evidence_tier": "official"}
       ],
       "deprecations": [
@@ -40,12 +43,13 @@
     {
       "provider": "Anthropic",
       "surface": ["Claude", "Claude Code", "API"],
-      "models_or_family": ["Claude Fable 5", "Claude Opus 5", "Claude Opus 4.8", "Claude Sonnet 5", "Claude Haiku 4.5"],
+      "models_or_family": ["Claude Fable 5", "Claude Opus 5", "Claude Opus 4.8", "Claude Sonnet 5", "Claude Mythos 5", "Claude Haiku 4.5"],
       "current_models": [
-        {"model_id": "claude-fable-5", "role": "highest available capability and long-running agents", "input_usd_per_mtok": 10, "output_usd_per_mtok": 50, "cache_write_usd_per_mtok": 12.5, "cache_read_usd_per_mtok": 1, "earliest_retirement_date": "2027-06-09", "evidence_tier": "official", "router_status": "candidate_requires_access_probe_and_bakeoff"},
-        {"model_id": "claude-opus-5", "role": "complex agentic coding and enterprise work", "input_usd_per_mtok": 5, "output_usd_per_mtok": 25, "cache_write_usd_per_mtok": 6.25, "cache_read_usd_per_mtok": 0.5, "earliest_retirement_date": "2027-07-24", "evidence_tier": "official", "router_status": "candidate"},
-        {"model_id": "claude-opus-4-8", "role": "prior-generation high-capability agentic work", "earliest_retirement_date": "2027-05-28", "evidence_tier": "official", "router_status": "candidate_requires_access_probe_and_bakeoff"},
-        {"model_id": "claude-sonnet-5", "role": "speed-intelligence balance for coding and agents", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 10, "introductory_pricing_ends": "2026-08-31", "standard_input_usd_per_mtok_after_intro": 3, "standard_output_usd_per_mtok_after_intro": 15, "cache_write_usd_per_mtok": 2.5, "cache_read_usd_per_mtok": 0.2, "tokenizer_note": "approximately 30% more tokens for the same text than the prior tokenizer", "priority_tier_supported": false, "earliest_retirement_date": "2027-06-30", "evidence_tier": "official", "router_status": "candidate"},
+        {"model_id": "claude-fable-5", "role": "highest available capability and long-running agents", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 10, "output_usd_per_mtok": 50, "cache_write_usd_per_mtok": 12.5, "cache_read_usd_per_mtok": 1, "earliest_retirement_date": "2027-06-09", "evidence_tier": "official", "router_status": "candidate_requires_access_probe_and_bakeoff"},
+        {"model_id": "claude-opus-5", "role": "complex agentic coding and enterprise work", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 5, "output_usd_per_mtok": 25, "cache_write_usd_per_mtok": 6.25, "cache_read_usd_per_mtok": 0.5, "earliest_retirement_date": "2027-07-24", "evidence_tier": "official", "router_status": "candidate"},
+        {"model_id": "claude-opus-4-8", "role": "prior-generation high-capability agentic work", "input_usd_per_mtok": 5, "output_usd_per_mtok": 25, "cache_write_usd_per_mtok": 6.25, "cache_read_usd_per_mtok": 0.5, "earliest_retirement_date": "2027-05-28", "evidence_tier": "official", "router_status": "candidate_requires_access_probe_and_bakeoff"},
+        {"model_id": "claude-sonnet-5", "role": "speed-intelligence balance for coding and agents", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 10, "pricing_status": "standard_as_of_2026-08-10", "scheduled_price_increase_cancelled": true, "cache_write_usd_per_mtok": 2.5, "cache_read_usd_per_mtok": 0.2, "tokenizer_note": "approximately 30% more tokens for the same text than the prior tokenizer", "api_notes": ["adaptive thinking is the default", "manual extended thinking is removed and returns HTTP 400", "non-default temperature, top_p, or top_k values return HTTP 400"], "priority_tier_supported": false, "earliest_retirement_date": "2027-06-30", "evidence_tier": "official", "router_status": "candidate"},
+        {"model_id": "claude-mythos-5", "role": "invitation-only defensive cybersecurity workflows", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 10, "output_usd_per_mtok": 50, "cache_write_usd_per_mtok": 12.5, "cache_read_usd_per_mtok": 1, "availability": "limited_invitation_only_project_glasswing", "evidence_tier": "official", "router_status": "candidate_requires_invitation_security_scope_and_bakeoff"},
         {"model_id": "claude-haiku-4-5-20251001", "role": "fast cost-efficient work", "input_usd_per_mtok": 1, "output_usd_per_mtok": 5, "cache_write_usd_per_mtok": 1.25, "cache_read_usd_per_mtok": 0.1, "earliest_retirement_date": "2026-10-15", "evidence_tier": "official"}
       ],
       "deprecations": [
@@ -65,12 +69,14 @@
     {
       "provider": "Google",
       "surface": ["Gemini", "Gemini API", "Vertex AI", "Flow/Veo where available"],
-      "models_or_family": ["Gemini 3.6 Flash", "Gemini 3.5 Flash", "Gemini 3.5 Flash-Lite", "Gemini 3.1 Pro", "Nano Banana 2 family", "Gemini Omni Flash", "Veo", "Lyria 3.5"],
+      "models_or_family": ["Gemini 3.6 Flash", "Gemini 3.5 Flash", "Gemini 3.5 Flash-Lite", "Gemini 3.1 Pro", "Gemini 3.1 Flash Lite Image", "Gemini 3 Pro Image", "Nano Banana 2 family", "Gemini Omni Flash", "Veo", "Lyria 3.5"],
       "current_models": [
         {"model_id": "gemini-3.6-flash", "role": "recommended computer-use and agent model", "api_notes": ["temperature, top_p, and top_k are deprecated", "prefilled model turns are unsupported"], "router_status": "candidate", "evidence_tier": "official"},
         {"model_id": "gemini-3.5-flash", "role": "stable agentic coding and multimodal analysis", "context_tokens": 1048576, "max_output_tokens": 65536, "router_status": "candidate", "evidence_tier": "official"},
         {"model_id": "gemini-3.5-flash-lite", "role": "low-latency cost-efficient agent work", "api_notes": ["temperature, top_p, and top_k are deprecated", "prefilled model turns are unsupported"], "router_status": "candidate", "evidence_tier": "official"},
         {"model_id": "gemini-3.1-flash-image", "role": "stable image generation and editing", "router_status": "candidate", "evidence_tier": "official"},
+        {"model_id": "gemini-3.1-flash-lite-image", "role": "ultra-low-latency high-volume image generation and editing", "context_tokens": 65536, "max_output_tokens": 4096, "image_output_resolution": "1K", "router_status": "candidate_requires_access_check_and_bakeoff", "evidence_tier": "official"},
+        {"model_id": "gemini-3-pro-image", "role": "high-quality professional image generation and editing", "router_status": "candidate_requires_access_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "gemini-omni-flash", "role": "conversational video generation and editing", "router_status": "candidate", "evidence_tier": "official"}
       ],
       "deprecations": [
@@ -116,8 +122,9 @@
     {
       "provider": "xAI",
       "surface": ["Grok", "xAI API if enabled", "GitHub Copilot where enabled"],
-      "models_or_family": ["Grok 4.5", "Grok Imagine Video 1.5", "Grok Voice"],
+      "models_or_family": ["Grok 4.6", "Grok 4.5", "Grok Imagine Video 1.5", "Grok Voice"],
       "current_models": [
+        {"model_id": "grok-4.6", "role": "flagship coding general tasks and knowledge work", "context_tokens": 500000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 6, "knowledge_cutoff": "2026-02-01", "reasoning": "configurable", "router_status": "candidate_requires_account_access_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "grok-4.5", "role": "coding agentic tasks and knowledge work", "context_tokens": 500000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 6, "router_status": "candidate_requires_account_access_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "grok-imagine-video-1.5", "role": "image-to-video with synchronized audio", "router_status": "candidate", "evidence_tier": "official"}
       ],
