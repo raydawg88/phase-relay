@@ -1,12 +1,12 @@
 {
-  "version": "0.2.3",
-  "last_refreshed": "2026-08-18",
+  "version": "0.2.4",
+  "last_refreshed": "2026-08-19",
   "refresh_frequency": "daily_light_weekly_deep",
   "models": [
     {
       "provider": "OpenAI",
       "surface": ["ChatGPT", "Codex", "API", "image/video where available"],
-      "models_or_family": ["GPT-5.6 Sol", "GPT-5.6 Terra", "GPT-5.6 Luna", "GPT-5.6 Cyber", "Daybreak", "GPT Image 2", "realtime/audio models", "Sora where available"],
+      "models_or_family": ["GPT-5.6 Sol", "GPT-5.6 Terra", "GPT-5.6 Luna", "GPT-5.6 Cyber", "Daybreak", "GPT Image 2", "GPT-Realtime 2.1 family", "realtime transcription and translation", "Sora where available"],
       "current_models": [
         {"model_id": "gpt-5.6-sol", "role": "flagship complex reasoning and coding", "context_tokens": 1050000, "max_output_tokens": 128000, "input_usd_per_mtok": 5, "output_usd_per_mtok": 30, "evidence_tier": "official"},
         {"model_id": "gpt-5.6-terra", "role": "balanced intelligence and cost", "context_tokens": 1050000, "max_output_tokens": 128000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 12, "evidence_tier": "official"},
@@ -14,6 +14,9 @@
         {"model_id": "gpt-5.6-cyber", "role": "authorized cybersecurity research and security testing", "context_tokens": 400000, "max_output_tokens": 128000, "input_usd_per_mtok": 12.5, "output_usd_per_mtok": 75, "router_status": "candidate_requires_daybreak_approval_and_security_scope", "evidence_tier": "official"},
         {"model_id": "daybreak-red-latest", "role": "alias for advanced approved cybersecurity models", "router_status": "candidate_requires_daybreak_approval_and_security_scope", "evidence_tier": "official"},
         {"model_id": "daybreak-blue-latest", "role": "safeguarded frontier models for defensive cybersecurity", "router_status": "candidate_requires_daybreak_approval_and_security_scope", "evidence_tier": "official"},
+        {"model_id": "gpt-realtime-2.1", "role": "realtime voice reasoning and tool use", "context_tokens": 128000, "max_output_tokens": 32000, "text_input_usd_per_mtok": 4, "text_output_usd_per_mtok": 24, "audio_input_usd_per_mtok": 32, "audio_output_usd_per_mtok": 64, "router_status": "candidate_requires_api_access_check_and_bakeoff", "evidence_tier": "official"},
+        {"model_id": "gpt-realtime-2.1-mini", "role": "lower-cost realtime voice reasoning and tool use", "context_tokens": 128000, "max_output_tokens": 32000, "text_input_usd_per_mtok": 0.6, "text_output_usd_per_mtok": 2.4, "audio_input_usd_per_mtok": 10, "audio_output_usd_per_mtok": 20, "router_status": "candidate_requires_api_access_check_and_bakeoff", "evidence_tier": "official"},
+        {"model_id": "gpt-realtime-translate", "role": "streaming speech-to-speech translation", "context_tokens": 16000, "max_output_tokens": 2000, "audio_usd_per_minute": 0.034, "router_status": "candidate_requires_api_access_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "gpt-image-2", "role": "image generation and editing", "evidence_tier": "official"}
       ],
       "deprecations": [
@@ -45,11 +48,11 @@
       "surface": ["Claude", "Claude Code", "API"],
       "models_or_family": ["Claude Fable 5", "Claude Opus 5", "Claude Opus 4.8", "Claude Sonnet 5", "Claude Mythos 5", "Claude Haiku 4.5"],
       "current_models": [
-        {"model_id": "claude-fable-5", "role": "highest available capability and long-running agents", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 10, "output_usd_per_mtok": 50, "cache_write_usd_per_mtok": 12.5, "cache_read_usd_per_mtok": 1, "earliest_retirement_date": "2027-06-09", "evidence_tier": "official", "router_status": "candidate_requires_access_probe_and_bakeoff"},
+        {"model_id": "claude-fable-5", "role": "highest available capability and long-running agents", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 10, "output_usd_per_mtok": 50, "cache_write_usd_per_mtok": 12.5, "cache_read_usd_per_mtok": 1, "data_retention_requirement_days": 30, "zero_data_retention_supported": false, "api_notes": ["adaptive thinking is always on", "manual thinking budgets, disabled thinking, and assistant prefill return HTTP 400"], "earliest_retirement_date": "2027-06-09", "evidence_tier": "official", "router_status": "candidate_requires_access_probe_privacy_review_and_bakeoff"},
         {"model_id": "claude-opus-5", "role": "complex agentic coding and enterprise work", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 5, "output_usd_per_mtok": 25, "cache_write_usd_per_mtok": 6.25, "cache_read_usd_per_mtok": 0.5, "earliest_retirement_date": "2027-07-24", "evidence_tier": "official", "router_status": "candidate"},
-        {"model_id": "claude-opus-4-8", "role": "prior-generation high-capability agentic work", "input_usd_per_mtok": 5, "output_usd_per_mtok": 25, "cache_write_usd_per_mtok": 6.25, "cache_read_usd_per_mtok": 0.5, "earliest_retirement_date": "2027-05-28", "evidence_tier": "official", "router_status": "candidate_requires_access_probe_and_bakeoff"},
+        {"model_id": "claude-opus-4-8", "role": "prior-generation high-capability agentic work", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 5, "output_usd_per_mtok": 25, "cache_write_usd_per_mtok": 6.25, "cache_read_usd_per_mtok": 0.5, "api_notes": ["effort defaults to high", "non-default temperature, top_p, or top_k values return HTTP 400"], "earliest_retirement_date": "2027-05-28", "evidence_tier": "official", "router_status": "candidate_requires_access_probe_and_bakeoff"},
         {"model_id": "claude-sonnet-5", "role": "speed-intelligence balance for coding and agents", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 10, "pricing_status": "standard_as_of_2026-08-10", "scheduled_price_increase_cancelled": true, "cache_write_usd_per_mtok": 2.5, "cache_read_usd_per_mtok": 0.2, "tokenizer_note": "approximately 30% more tokens for the same text than the prior tokenizer", "api_notes": ["adaptive thinking is the default", "manual extended thinking is removed and returns HTTP 400", "non-default temperature, top_p, or top_k values return HTTP 400"], "priority_tier_supported": false, "earliest_retirement_date": "2027-06-30", "evidence_tier": "official", "router_status": "candidate"},
-        {"model_id": "claude-mythos-5", "role": "invitation-only defensive cybersecurity workflows", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 10, "output_usd_per_mtok": 50, "cache_write_usd_per_mtok": 12.5, "cache_read_usd_per_mtok": 1, "availability": "limited_invitation_only_project_glasswing", "evidence_tier": "official", "router_status": "candidate_requires_invitation_security_scope_and_bakeoff"},
+        {"model_id": "claude-mythos-5", "role": "invitation-only defensive cybersecurity workflows", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 10, "output_usd_per_mtok": 50, "cache_write_usd_per_mtok": 12.5, "cache_read_usd_per_mtok": 1, "availability": "limited_invitation_only_project_glasswing", "api_notes": ["adaptive thinking is always on", "manual thinking budgets, disabled thinking, and assistant prefill return HTTP 400"], "evidence_tier": "official", "router_status": "candidate_requires_invitation_security_scope_and_bakeoff"},
         {"model_id": "claude-haiku-4-5-20251001", "role": "fast cost-efficient work", "input_usd_per_mtok": 1, "output_usd_per_mtok": 5, "cache_write_usd_per_mtok": 1.25, "cache_read_usd_per_mtok": 0.1, "earliest_retirement_date": "2026-10-15", "evidence_tier": "official"}
       ],
       "deprecations": [
@@ -69,15 +72,18 @@
     {
       "provider": "Google",
       "surface": ["Gemini", "Gemini API", "Vertex AI", "Flow/Veo where available"],
-      "models_or_family": ["Gemini 3.6 Flash", "Gemini 3.5 Flash", "Gemini 3.5 Flash-Lite", "Gemini 3.1 Pro", "Gemini 3.1 Flash Lite Image", "Gemini 3 Pro Image", "Nano Banana 2 family", "Gemini Omni Flash", "Veo", "Lyria 3.5"],
+      "models_or_family": ["Gemini 3.7 Flash", "Gemini 3.6 Flash", "Gemini 3.5 Flash", "Gemini 3.5 Flash-Lite", "Gemini 3.1 Pro", "Gemini 3.1 Flash Lite Image", "Gemini 3 Pro Image", "Gemini Robotics ER 2", "Nano Banana 2 family", "Gemini Omni Flash", "Veo", "Lyria 3.5"],
       "current_models": [
+        {"model_id": "gemini-3.7-flash", "role": "newest multimodal coding and agent workhorse", "context_tokens": 1048576, "max_output_tokens": 65536, "modalities": ["text", "image", "video", "audio", "PDF"], "api_notes": ["thinking supports low, medium, and high; minimal returns an error", "computer use is preview"], "pricing_status": "introductory_through_2026-12-31", "router_status": "candidate_requires_access_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "gemini-3.6-flash", "role": "recommended computer-use and agent model", "api_notes": ["temperature, top_p, and top_k are deprecated", "prefilled model turns are unsupported"], "router_status": "candidate", "evidence_tier": "official"},
         {"model_id": "gemini-3.5-flash", "role": "stable agentic coding and multimodal analysis", "context_tokens": 1048576, "max_output_tokens": 65536, "router_status": "candidate", "evidence_tier": "official"},
         {"model_id": "gemini-3.5-flash-lite", "role": "low-latency cost-efficient agent work", "api_notes": ["temperature, top_p, and top_k are deprecated", "prefilled model turns are unsupported"], "router_status": "candidate", "evidence_tier": "official"},
         {"model_id": "gemini-3.1-flash-image", "role": "stable image generation and editing", "router_status": "candidate", "evidence_tier": "official"},
         {"model_id": "gemini-3.1-flash-lite-image", "role": "ultra-low-latency high-volume image generation and editing", "context_tokens": 65536, "max_output_tokens": 4096, "image_output_resolution": "1K", "router_status": "candidate_requires_access_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "gemini-3-pro-image", "role": "high-quality professional image generation and editing", "router_status": "candidate_requires_access_check_and_bakeoff", "evidence_tier": "official"},
-        {"model_id": "gemini-omni-flash", "role": "conversational video generation and editing", "router_status": "candidate", "evidence_tier": "official"}
+        {"model_id": "gemini-omni-flash-preview", "role": "conversational video generation and editing", "router_status": "candidate", "evidence_tier": "official"},
+        {"model_id": "gemini-robotics-er-2-preview", "role": "robotics spatial reasoning tool orchestration and video moment finding", "modalities": ["text", "image", "video", "audio"], "router_status": "candidate_requires_specialized_access_check_and_bakeoff", "evidence_tier": "official"},
+        {"model_id": "gemini-robotics-er-2-streaming-preview", "role": "low-latency streaming robot agents with bidirectional audio and video", "modalities": ["text", "image", "video", "audio"], "router_status": "candidate_requires_specialized_access_check_and_bakeoff", "evidence_tier": "official"}
       ],
       "deprecations": [
         {"model_id": "gemini-3-flash-preview", "recommended_replacement": "gemini-3.6-flash", "evidence_tier": "official"},
@@ -146,7 +152,7 @@
         {"model_id": "mistral-medium-3-5", "role": "open-weight multimodal agentic and coding work with adjustable reasoning", "router_status": "candidate_requires_hosting_or_api_access_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "mistral-small-2603", "role": "efficient open-weight multimodal instruct reasoning and coding with 256K context", "context_tokens": 256000, "router_status": "candidate_requires_hosting_or_api_access_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "ideogram-4.0", "role": "open-weight typography layout and brand-oriented image generation", "parameters": "9.3B", "max_resolution": "2048px per side", "evidence_tier": "official"},
-        {"model_id": "mistral-ocr-4", "role": "document intelligence", "evidence_tier": "official"},
+        {"model_id": "mistral-ocr-4-1", "role": "document intelligence with page block and word confidence options", "aliases": ["mistral-ocr-latest", "mistral-ocr-4"], "router_status": "candidate_requires_access_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "leanstral-1.5", "role": "formal proof and reasoning", "evidence_tier": "official"}
       ],
       "primary_sources": [
@@ -163,7 +169,10 @@
     {
       "provider": "Cross-provider media routers",
       "surface": ["OpenRouter Image API", "OpenRouter Video API", "Runway MCP", "Runway Agent"],
-      "models_or_family": ["Runway Gen-4.5", "Runway Aleph 2.0", "Seedance 2.0", "Kling 3.0", "GPT Image 2", "Nano Banana", "provider-routed video models"],
+      "models_or_family": ["Runway Gen-4.5", "Runway Aleph 2.0", "Seedance 2.0", "Kling 3.0", "FLUX 3 Video", "GPT Image 2", "Nano Banana", "provider-routed video models"],
+      "current_candidates": [
+        {"model_family": "FLUX 3 Video", "provider": "Black Forest Labs", "role": "text-to-video and image-to-video with native audio", "max_duration_seconds": 20, "resolution": "HD with Full HD upscaling", "availability": "BFL API and selected partners", "exact_endpoint_id_status": "not_confirmed_in_accessible_official_docs", "router_status": "candidate_requires_access_cost_check_and_rendered_bakeoff", "evidence_tier": "official"}
+      ],
       "primary_sources": [
         "https://openrouter.ai/blog/announcements/image-api/",
         "https://openrouter.ai/blog/announcements/video-generation/",
@@ -176,10 +185,14 @@
     },
     {
       "provider": "Cross-provider telemetry and routing controls",
-      "surface": ["OpenRouter Classifiers", "OpenRouter routing logs"],
-      "models_or_family": ["request classifiers and cost tracking"],
+      "surface": ["OpenRouter Classifiers", "OpenRouter Activity", "OpenRouter beta Analytics API", "OpenRouter routing logs"],
+      "models_or_family": ["request classifiers", "cost and token tracking", "provider and model performance analytics"],
+      "current_candidates": [
+        {"capability_id": "openrouter-analytics-api-beta", "role": "query spend requests tokens cache hit rate latency throughput and routing by model or agent", "endpoints": ["GET /api/v1/analytics/meta", "POST /api/v1/analytics/query"], "access": "OpenRouter management key", "privacy_note": "prompt and completion detail exists only when private input/output logging is enabled", "router_status": "candidate_requires_signup_management_key_and_privacy_review", "evidence_tier": "official"}
+      ],
       "primary_sources": [
-        "https://openrouter.ai/blog/announcements/classifiers/"
+        "https://openrouter.ai/blog/announcements/classifiers/",
+        "https://openrouter.ai/blog/announcements/activity-dashboard/"
       ],
       "default_lanes": ["telemetry_candidate", "usage_classification_candidate"],
       "confidence": "medium",
