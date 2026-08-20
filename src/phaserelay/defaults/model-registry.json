@@ -1,6 +1,6 @@
 {
-  "version": "0.2.4",
-  "last_refreshed": "2026-08-19",
+  "version": "0.2.5",
+  "last_refreshed": "2026-08-20",
   "refresh_frequency": "daily_light_weekly_deep",
   "models": [
     {
@@ -49,11 +49,18 @@
       "models_or_family": ["Claude Fable 5", "Claude Opus 5", "Claude Opus 4.8", "Claude Sonnet 5", "Claude Mythos 5", "Claude Haiku 4.5"],
       "current_models": [
         {"model_id": "claude-fable-5", "role": "highest available capability and long-running agents", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 10, "output_usd_per_mtok": 50, "cache_write_usd_per_mtok": 12.5, "cache_read_usd_per_mtok": 1, "data_retention_requirement_days": 30, "zero_data_retention_supported": false, "api_notes": ["adaptive thinking is always on", "manual thinking budgets, disabled thinking, and assistant prefill return HTTP 400"], "earliest_retirement_date": "2027-06-09", "evidence_tier": "official", "router_status": "candidate_requires_access_probe_privacy_review_and_bakeoff"},
-        {"model_id": "claude-opus-5", "role": "complex agentic coding and enterprise work", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 5, "output_usd_per_mtok": 25, "cache_write_usd_per_mtok": 6.25, "cache_read_usd_per_mtok": 0.5, "earliest_retirement_date": "2027-07-24", "evidence_tier": "official", "router_status": "candidate"},
+        {"model_id": "claude-opus-5", "role": "complex agentic coding and enterprise work", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 5, "output_usd_per_mtok": 25, "cache_write_usd_per_mtok": 6.25, "cache_read_usd_per_mtok": 0.5, "api_notes": ["thinking is on by default", "effort supports low, medium, high, xhigh, and max", "disabled thinking with xhigh or max returns HTTP 400"], "earliest_retirement_date": "2027-07-24", "evidence_tier": "official", "router_status": "candidate"},
         {"model_id": "claude-opus-4-8", "role": "prior-generation high-capability agentic work", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 5, "output_usd_per_mtok": 25, "cache_write_usd_per_mtok": 6.25, "cache_read_usd_per_mtok": 0.5, "api_notes": ["effort defaults to high", "non-default temperature, top_p, or top_k values return HTTP 400"], "earliest_retirement_date": "2027-05-28", "evidence_tier": "official", "router_status": "candidate_requires_access_probe_and_bakeoff"},
         {"model_id": "claude-sonnet-5", "role": "speed-intelligence balance for coding and agents", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 10, "pricing_status": "standard_as_of_2026-08-10", "scheduled_price_increase_cancelled": true, "cache_write_usd_per_mtok": 2.5, "cache_read_usd_per_mtok": 0.2, "tokenizer_note": "approximately 30% more tokens for the same text than the prior tokenizer", "api_notes": ["adaptive thinking is the default", "manual extended thinking is removed and returns HTTP 400", "non-default temperature, top_p, or top_k values return HTTP 400"], "priority_tier_supported": false, "earliest_retirement_date": "2027-06-30", "evidence_tier": "official", "router_status": "candidate"},
         {"model_id": "claude-mythos-5", "role": "invitation-only defensive cybersecurity workflows", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 10, "output_usd_per_mtok": 50, "cache_write_usd_per_mtok": 12.5, "cache_read_usd_per_mtok": 1, "availability": "limited_invitation_only_project_glasswing", "api_notes": ["adaptive thinking is always on", "manual thinking budgets, disabled thinking, and assistant prefill return HTTP 400"], "evidence_tier": "official", "router_status": "candidate_requires_invitation_security_scope_and_bakeoff"},
         {"model_id": "claude-haiku-4-5-20251001", "role": "fast cost-efficient work", "input_usd_per_mtok": 1, "output_usd_per_mtok": 5, "cache_write_usd_per_mtok": 1.25, "cache_read_usd_per_mtok": 0.1, "earliest_retirement_date": "2026-10-15", "evidence_tier": "official"}
+      ],
+      "platform_capabilities": [
+        {"capability_id": "claude-files-api", "status": "generally_available", "storage_per_organization": "1 TB", "rate_limit_rpm": 500, "routing_relevance": "upload-once file reuse and expiring corpus inputs", "evidence_tier": "official"},
+        {"capability_id": "claude-agent-skills-api", "status": "generally_available", "api_path": "/v1/skills", "routing_relevance": "load reusable skills through Messages containers and Managed Agents", "evidence_tier": "official"},
+        {"capability_id": "claude-managed-agents-domain-controls", "status": "active", "controls": ["allowed_domains", "blocked_domains", "max_content_tokens"], "routing_relevance": "bounded research and lower fetched-context usage", "evidence_tier": "official"},
+        {"capability_id": "claude-managed-agents-memory-stores", "status": "active_for_self_hosted_sandboxes", "routing_relevance": "persistent project memory across sessions", "evidence_tier": "official"},
+        {"capability_id": "claude-managed-agents-observability", "status": "active", "metrics": ["session cost", "per-tool statistics", "per-thread activity"], "routing_relevance": "agent cost and execution review", "evidence_tier": "official"}
       ],
       "deprecations": [
         {"model_id": "claude-opus-4-1-20250805", "status": "deprecated", "retirement_date": "2026-08-05", "evidence_tier": "official"},
@@ -132,7 +139,8 @@
       "current_models": [
         {"model_id": "grok-4.6", "role": "flagship coding general tasks and knowledge work", "context_tokens": 500000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 6, "knowledge_cutoff": "2026-02-01", "reasoning": "configurable", "router_status": "candidate_requires_account_access_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "grok-4.5", "role": "coding agentic tasks and knowledge work", "context_tokens": 500000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 6, "router_status": "candidate_requires_account_access_check_and_bakeoff", "evidence_tier": "official"},
-        {"model_id": "grok-imagine-video-1.5", "role": "image-to-video with synchronized audio", "router_status": "candidate", "evidence_tier": "official"}
+        {"model_id": "grok-imagine-video-1.5", "role": "text-to-video image-to-video and reference-to-video with synchronized audio", "modes": ["text_to_video", "image_to_video", "reference_to_video"], "native_resolution": "1080p for text-to-video and image-to-video", "reference_video_notes": "optional preset voices", "router_status": "candidate_requires_access_cost_check_and_rendered_bakeoff", "evidence_tier": "official"},
+        {"model_id": "grok-voice-think-fast-2.0", "role": "realtime speech-to-speech agent", "aliases": ["grok-voice-latest"], "alias_effective_date": "2026-08-05", "router_status": "candidate_requires_api_access_check_and_bakeoff", "evidence_tier": "official"}
       ],
       "primary_sources": [
         "https://docs.x.ai/docs/models",
