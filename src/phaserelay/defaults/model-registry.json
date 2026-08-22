@@ -1,6 +1,6 @@
 {
-  "version": "0.2.6",
-  "last_refreshed": "2026-08-21",
+  "version": "0.2.7",
+  "last_refreshed": "2026-08-22",
   "refresh_frequency": "daily_light_weekly_deep",
   "models": [
     {
@@ -8,7 +8,7 @@
       "surface": ["ChatGPT", "Codex", "API", "image/video where available"],
       "models_or_family": ["GPT-5.6 Sol", "GPT-5.6 Terra", "GPT-5.6 Luna", "GPT-5.6 Cyber", "Daybreak", "GPT Image 2", "GPT-Realtime 2.1 family", "realtime transcription and translation", "Sora where available"],
       "current_models": [
-        {"model_id": "gpt-5.6-sol", "role": "flagship complex reasoning and coding", "context_tokens": 1050000, "max_output_tokens": 128000, "input_usd_per_mtok": 5, "output_usd_per_mtok": 30, "evidence_tier": "official"},
+        {"model_id": "gpt-5.6-sol", "role": "flagship complex reasoning and coding", "context_tokens": 1050000, "max_output_tokens": 128000, "input_usd_per_mtok": 4, "output_usd_per_mtok": 20, "pricing_status": "promotional_through_at_least_2026-11-21", "evidence_tier": "official"},
         {"model_id": "gpt-5.6-terra", "role": "balanced intelligence and cost", "context_tokens": 1050000, "max_output_tokens": 128000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 12, "evidence_tier": "official"},
         {"model_id": "gpt-5.6-luna", "role": "cost-sensitive high-volume work", "context_tokens": 1050000, "max_output_tokens": 128000, "input_usd_per_mtok": 0.2, "output_usd_per_mtok": 1.2, "evidence_tier": "official"},
         {"model_id": "gpt-5.6-cyber", "role": "authorized cybersecurity research and security testing", "context_tokens": 400000, "max_output_tokens": 128000, "input_usd_per_mtok": 12.5, "output_usd_per_mtok": 75, "router_status": "candidate_requires_daybreak_approval_and_security_scope", "evidence_tier": "official"},
@@ -20,7 +20,8 @@
         {"model_id": "gpt-image-2", "role": "image generation and editing", "api_notes": ["transparent PNG and WebP backgrounds are available in preview through the Images and Responses APIs"], "evidence_tier": "official"}
       ],
       "platform_capabilities": [
-        {"capability_id": "openai-prompt-caching-dashboard", "status": "active", "metrics": ["cache hit rate", "cache reads per write", "cache-read tokens", "cache-write tokens", "uncached tokens"], "filters": ["model", "service tier"], "routing_relevance": "identify repeated context and verify cache savings by model", "evidence_tier": "official"}
+        {"capability_id": "openai-prompt-caching-dashboard", "status": "active", "metrics": ["cache hit rate", "cache reads per write", "cache-read tokens", "cache-write tokens", "uncached tokens"], "filters": ["model", "service tier"], "routing_relevance": "identify repeated context and verify cache savings by model", "evidence_tier": "official"},
+        {"capability_id": "openai-request-level-regional-processing", "status": "active_for_eligible_projects", "requirements": ["API key from a project with Global geography", "supported endpoint and model", "existing data retention eligibility"], "routing_relevance": "select regional processing for an individual eligible request without changing the project default", "evidence_tier": "official"}
       ],
       "deprecations": [
         {"model_id": "gpt-5.3-chat", "status": "deprecated", "evidence_tier": "official"},
@@ -35,7 +36,8 @@
         {"model_id": "gpt-realtime", "status": "deprecated", "evidence_tier": "official"},
         {"model_id": "gpt-audio", "status": "deprecated", "evidence_tier": "official"},
         {"model_id": "o3-deep-research", "status": "deprecated", "evidence_tier": "official"},
-        {"model_id": "o4-mini-deep-research", "status": "deprecated", "evidence_tier": "official"}
+        {"model_id": "o4-mini-deep-research", "status": "deprecated", "evidence_tier": "official"},
+        {"system_id": "assistants-api", "status": "deprecated", "shutdown_date": "2026-08-26", "recommended_replacement": "Responses API and Conversations API", "evidence_tier": "official"}
       ],
       "primary_sources": [
         "https://platform.openai.com/docs/models",
@@ -136,7 +138,8 @@
       "platform_capabilities": [
         {"capability_id": "perplexity-agent-api-cross-provider", "status": "active", "providers": ["OpenAI", "Anthropic", "Google", "xAI", "DeepSeek", "Z.AI", "Moonshot AI", "NVIDIA", "Perplexity"], "billing": "separate token and tool charges through API credits", "telemetry": ["exact token counts", "calculated total request cost when present"], "routing_relevance": "one metered execution surface for model handoffs and cost reconciliation", "evidence_tier": "official"},
         {"capability_id": "perplexity-fast-preset", "status": "dynamic", "current_model": "openai/gpt-5.6-luna", "reasoning_effort": "minimal", "service_tier": "priority", "priority_price_multiplier": 2, "tools": ["web_search"], "routing_relevance": "fast cited lookup with one search step; freeze the configuration when reproducibility matters", "evidence_tier": "official"},
-        {"capability_id": "perplexity-router-api", "status": "private_preview", "access": "request by email", "features": ["Chat Completions compatibility", "Anthropic Messages compatibility", "automatic health-based routing and failover"], "routing_relevance": "possible future provider failover surface", "evidence_tier": "official"}
+        {"capability_id": "perplexity-router-api", "status": "private_preview", "access": "request by email", "features": ["Chat Completions compatibility", "Anthropic Messages compatibility", "automatic health-based routing and failover"], "routing_relevance": "possible future provider failover surface", "evidence_tier": "official"},
+        {"capability_id": "perplexity-preset-prompt-caching", "status": "active", "behavior": "stable prompt cache keys are applied automatically to Agent API presets unless explicitly overridden", "estimated_cost_reduction": "about 5% for frequent preset use depending on cache utilization", "routing_relevance": "reduce repeated system-prompt and tool-definition cost while retaining dynamic presets", "evidence_tier": "official"}
       ],
       "primary_sources": [
         "https://www.perplexity.ai/pro",
@@ -170,6 +173,8 @@
       "surface": ["OpenRouter", "Together", "Fireworks", "Hugging Face", "Replicate", "local Ollama/LM Studio/vLLM"],
       "models_or_family": ["Llama", "Qwen", "DeepSeek", "Mistral", "Kimi", "GLM", "Flux", "Ideogram"],
       "current_candidates": [
+        {"model_id": "Qwen/Qwen3.8-2.4T-A95B", "role": "frontier-scale open text reasoning for coding research and long-horizon agents", "parameters_total": "2.4T", "parameters_active": "95B", "context_tokens_native": 262144, "context_tokens_extended": 1010000, "modalities": ["text"], "api_notes": ["thinking is required and cannot be disabled", "reasoning_effort supports low medium and xhigh", "preserve_thinking is enabled by default"], "router_status": "candidate_requires_hosting_capacity_or_api_access_and_bakeoff", "evidence_tier": "official_model_repository"},
+        {"model_id": "Qwen/Qwen3.8-27B", "role": "deployable open multimodal reasoning for coding research images and long-video analysis", "parameters_total": "27B", "context_tokens_native": 262144, "context_tokens_extended": 1000000, "modalities": ["text", "image", "video"], "api_notes": ["thinking is enabled by default and may be disabled", "reasoning_effort is adjustable", "preserve_thinking retains reasoning context", "video sampling rate is configurable in supported runtimes"], "router_status": "candidate_requires_hosting_or_api_access_check_and_bakeoff", "evidence_tier": "official_model_repository"},
         {"model_id": "Qwen/Qwen3.6-35B-A3B", "role": "efficient local or hosted agentic work", "evidence_tier": "official_model_repository"},
         {"model_id": "Qwen/Qwen3.6-27B", "role": "local general reasoning and coding", "evidence_tier": "official_model_repository"},
         {"model_id": "mistral-medium-3-5", "role": "open-weight multimodal agentic and coding work with adjustable reasoning", "router_status": "candidate_requires_hosting_or_api_access_check_and_bakeoff", "evidence_tier": "official"},
@@ -183,7 +188,10 @@
         "https://docs.together.ai/",
         "https://docs.fireworks.ai/",
         "https://huggingface.co/docs/inference-providers",
-        "https://replicate.com/docs"
+        "https://replicate.com/docs",
+        "https://github.com/QwenLM/Qwen3.8",
+        "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+        "https://huggingface.co/Qwen/Qwen3.8-27B"
       ],
       "default_lanes": ["batch_extraction", "private_preprocessing", "cheap_second_opinion", "media_trials"],
       "confidence": "low",
@@ -194,13 +202,16 @@
       "surface": ["OpenRouter Image API", "OpenRouter Video API", "Runway MCP", "Runway Agent"],
       "models_or_family": ["Runway Gen-4.5", "Runway Aleph 2.0", "Seedance 2.0", "Kling 3.0", "FLUX 3 Video", "GPT Image 2", "Nano Banana", "provider-routed video models"],
       "current_candidates": [
-        {"model_family": "FLUX 3 Video", "provider": "Black Forest Labs", "role": "text-to-video and image-to-video with native audio", "max_duration_seconds": 20, "resolution": "HD with Full HD upscaling", "availability": "BFL API and selected partners", "exact_endpoint_id_status": "not_confirmed_in_accessible_official_docs", "router_status": "candidate_requires_access_cost_check_and_rendered_bakeoff", "evidence_tier": "official"}
+        {"model_family": "FLUX 3 Video", "provider": "Black Forest Labs", "role": "text-to-video and image-to-video with native audio", "max_duration_seconds": 20, "resolution": "HD with Full HD upscaling", "availability": "BFL API and selected partners", "exact_endpoint_id_status": "not_confirmed_in_accessible_official_docs", "router_status": "candidate_requires_access_cost_check_and_rendered_bakeoff", "evidence_tier": "official"},
+        {"model_id": "flux-3-upscale", "provider": "Black Forest Labs", "role": "regenerative video upscaling and repair from 480p through native 4K", "upscale_factors": [1.5, 2, 3], "modes": [{"name": "precise", "steps": 4, "usd_per_megapixel_second": 0.07, "identity_consistency": "higher"}, {"name": "creative", "steps": 8, "usd_per_megapixel_second": 0.1, "identity_consistency": "lower"}], "availability": "BFL API and playground", "router_status": "candidate_requires_access_cost_check_and_rendered_bakeoff", "evidence_tier": "official"}
       ],
       "primary_sources": [
         "https://openrouter.ai/blog/announcements/image-api/",
         "https://openrouter.ai/blog/announcements/video-generation/",
         "https://runwayml.com/news/company-news/mcp",
-        "https://runwayml.com/news/introducing-aleph-2-and-edit-studio"
+        "https://runwayml.com/news/introducing-aleph-2-and-edit-studio",
+        "https://bfl.ai/blog/flux-video-upscale",
+        "https://docs.bfl.ai/flux_tools/flux_video_upscale"
       ],
       "default_lanes": ["media_generation_candidate", "video_editing_candidate", "agent_media_handoff_candidate"],
       "confidence": "medium",
