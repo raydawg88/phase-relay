@@ -1,6 +1,6 @@
 {
-  "version": "0.2.7",
-  "last_refreshed": "2026-08-22",
+  "version": "0.2.8",
+  "last_refreshed": "2026-08-26",
   "refresh_frequency": "daily_light_weekly_deep",
   "models": [
     {
@@ -37,7 +37,7 @@
         {"model_id": "gpt-audio", "status": "deprecated", "evidence_tier": "official"},
         {"model_id": "o3-deep-research", "status": "deprecated", "evidence_tier": "official"},
         {"model_id": "o4-mini-deep-research", "status": "deprecated", "evidence_tier": "official"},
-        {"system_id": "assistants-api", "status": "deprecated", "shutdown_date": "2026-08-26", "recommended_replacement": "Responses API and Conversations API", "evidence_tier": "official"}
+        {"system_id": "assistants-api", "status": "shut_down", "shutdown_date": "2026-08-26", "recommended_replacement": "Responses API and Conversations API", "router_status": "blocked_do_not_route", "evidence_tier": "official"}
       ],
       "primary_sources": [
         "https://platform.openai.com/docs/models",
