@@ -1,6 +1,6 @@
 {
-  "version": "0.2.8",
-  "last_refreshed": "2026-08-26",
+  "version": "0.2.9",
+  "last_refreshed": "2026-08-27",
   "refresh_frequency": "daily_light_weekly_deep",
   "models": [
     {
@@ -152,16 +152,17 @@
     },
     {
       "provider": "xAI",
-      "surface": ["Grok", "xAI API if enabled", "GitHub Copilot where enabled"],
+      "surface": ["Grok", "xAI API if enabled", "Microsoft Foundry", "GitHub Copilot where enabled"],
       "models_or_family": ["Grok 4.6", "Grok 4.5", "Grok Imagine Video 1.5", "Grok Voice"],
       "current_models": [
-        {"model_id": "grok-4.6", "role": "flagship coding general tasks and knowledge work", "context_tokens": 500000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 6, "knowledge_cutoff": "2026-02-01", "reasoning": "configurable", "router_status": "candidate_requires_account_access_check_and_bakeoff", "evidence_tier": "official"},
+        {"model_id": "grok-4.6", "role": "flagship coding general tasks and knowledge work", "context_tokens": 500000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 6, "knowledge_cutoff": "2026-02-01", "reasoning": "configurable", "availability": ["xAI API", "Microsoft Foundry"], "router_status": "candidate_requires_account_access_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "grok-4.5", "role": "coding agentic tasks and knowledge work", "context_tokens": 500000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 6, "router_status": "candidate_requires_account_access_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "grok-imagine-video-1.5", "role": "text-to-video image-to-video and reference-to-video with synchronized audio", "modes": ["text_to_video", "image_to_video", "reference_to_video"], "native_resolution": "1080p for text-to-video and image-to-video", "reference_video_notes": "optional preset voices", "router_status": "candidate_requires_access_cost_check_and_rendered_bakeoff", "evidence_tier": "official"},
         {"model_id": "grok-voice-think-fast-2.0", "role": "realtime speech-to-speech agent", "aliases": ["grok-voice-latest"], "alias_effective_date": "2026-08-05", "router_status": "candidate_requires_api_access_check_and_bakeoff", "evidence_tier": "official"}
       ],
       "primary_sources": [
         "https://docs.x.ai/docs/models",
+        "https://x.ai/news/grok-4-6-microsoft-foundry",
         "https://grok.com/plans"
       ],
       "default_lanes": ["social_pulse", "alternate_brainstorm"],
@@ -202,7 +203,7 @@
       "surface": ["OpenRouter Image API", "OpenRouter Video API", "Runway MCP", "Runway Agent"],
       "models_or_family": ["Runway Gen-4.5", "Runway Aleph 2.0", "Seedance 2.0", "Kling 3.0", "FLUX 3 Video", "GPT Image 2", "Nano Banana", "provider-routed video models"],
       "current_candidates": [
-        {"model_family": "FLUX 3 Video", "provider": "Black Forest Labs", "role": "text-to-video and image-to-video with native audio", "max_duration_seconds": 20, "resolution": "HD with Full HD upscaling", "availability": "BFL API and selected partners", "exact_endpoint_id_status": "not_confirmed_in_accessible_official_docs", "router_status": "candidate_requires_access_cost_check_and_rendered_bakeoff", "evidence_tier": "official"},
+        {"model_family": "FLUX 3 Video", "provider": "Black Forest Labs", "role": "text-to-video image-to-video and video continuation with native audio", "max_duration_seconds": 20, "resolution": "HD and Full HD", "pricing_usd_per_second": {"text_or_image_to_video_full_render_hd": 0.17, "text_or_image_to_video_full_render_fhd": 0.29, "text_or_image_to_video_draft_hd": 0.06, "video_continuation_full_render_hd": 0.43, "video_continuation_full_render_fhd": 0.54, "video_continuation_draft_hd": 0.12}, "availability": "BFL API and playground", "exact_endpoint_id_status": "not_confirmed_in_accessible_official_docs", "router_status": "candidate_requires_access_cost_check_and_rendered_bakeoff", "evidence_tier": "official"},
         {"model_id": "flux-3-upscale", "provider": "Black Forest Labs", "role": "regenerative video upscaling and repair from 480p through native 4K", "upscale_factors": [1.5, 2, 3], "modes": [{"name": "precise", "steps": 4, "usd_per_megapixel_second": 0.07, "identity_consistency": "higher"}, {"name": "creative", "steps": 8, "usd_per_megapixel_second": 0.1, "identity_consistency": "lower"}], "availability": "BFL API and playground", "router_status": "candidate_requires_access_cost_check_and_rendered_bakeoff", "evidence_tier": "official"}
       ],
       "primary_sources": [
@@ -211,7 +212,8 @@
         "https://runwayml.com/news/company-news/mcp",
         "https://runwayml.com/news/introducing-aleph-2-and-edit-studio",
         "https://bfl.ai/blog/flux-video-upscale",
-        "https://docs.bfl.ai/flux_tools/flux_video_upscale"
+        "https://docs.bfl.ai/flux_tools/flux_video_upscale",
+        "https://help.bfl.ai/articles/7986977817-what-are-the-costs-associated-with-using-your-models"
       ],
       "default_lanes": ["media_generation_candidate", "video_editing_candidate", "agent_media_handoff_candidate"],
       "confidence": "medium",
