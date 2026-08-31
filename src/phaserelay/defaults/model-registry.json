@@ -1,5 +1,5 @@
 {
-  "version": "0.2.10",
+  "version": "0.2.11",
   "last_refreshed": "2026-08-28",
   "refresh_frequency": "daily_light_weekly_deep",
   "models": [
@@ -95,7 +95,9 @@
         {"model_id": "gemini-3.1-flash-image", "role": "stable image generation and editing", "router_status": "candidate", "evidence_tier": "official"},
         {"model_id": "gemini-3.1-flash-lite-image", "role": "ultra-low-latency high-volume image generation and editing", "context_tokens": 65536, "max_output_tokens": 4096, "image_output_resolution": "1K", "router_status": "candidate_requires_access_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "gemini-3-pro-image", "role": "high-quality professional image generation and editing", "router_status": "candidate_requires_access_check_and_bakeoff", "evidence_tier": "official"},
-        {"model_id": "gemini-omni-flash-preview", "role": "conversational video generation and editing", "router_status": "candidate", "evidence_tier": "official"},
+        {"model_id": "gemini-omni-1.1-flash", "role": "conversational video generation editing extension and keyframe interpolation with native audio", "context_tokens": 1048576, "input_modalities": ["text", "image", "video"], "output_modalities": ["video"], "input_video_limit_seconds": 10, "output_video_duration_seconds": "3-10", "output_resolutions": ["360p", "720p", "1080p", "4K"], "output_fps": 24, "router_status": "candidate_requires_access_cost_check_and_rendered_bakeoff", "evidence_tier": "official"},
+        {"model_id": "gemini-3.5-transcribe", "role": "non-streaming multilingual speech transcription with diarization timestamps and vocabulary biasing", "languages": "85+", "audio_input_usd_per_mtok": 2, "text_output_usd_per_mtok": 12, "estimated_blended_usd_per_minute": 0.005, "router_status": "candidate_requires_access_cost_check_and_bakeoff", "evidence_tier": "official"},
+        {"model_id": "gemini-3.5-transcribe-live", "role": "low-latency bidirectional streaming speech transcription over WebSockets", "audio_input_usd_per_mtok": 3.5, "text_output_usd_per_mtok": 21, "estimated_blended_usd_per_minute": 0.009, "router_status": "candidate_requires_access_cost_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "gemini-robotics-er-2-preview", "role": "robotics spatial reasoning tool orchestration and video moment finding", "modalities": ["text", "image", "video", "audio"], "router_status": "candidate_requires_specialized_access_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "gemini-robotics-er-2-streaming-preview", "role": "low-latency streaming robot agents with bidirectional audio and video", "modalities": ["text", "image", "video", "audio"], "router_status": "candidate_requires_specialized_access_check_and_bakeoff", "evidence_tier": "official"}
       ],
@@ -108,10 +110,14 @@
         {"model_id": "imagen-4.0-fast-generate-001", "shutdown_date": "2026-08-17", "recommended_replacement": "gemini-3.1-flash-image", "evidence_tier": "official"},
         {"model_id": "veo-3.0-generate-001", "shutdown_date": "2026-06-30", "recommended_replacement": "veo-3.1-generate-preview", "evidence_tier": "official"},
         {"model_id": "veo-3.0-fast-generate-001", "shutdown_date": "2026-06-30", "recommended_replacement": "veo-3.1-fast-generate-preview", "evidence_tier": "official"},
-        {"model_id": "gemini-robotics-er-1.6-preview", "shutdown_date": "2026-08-31", "recommended_replacement": "gemini-robotics-er-2-preview", "evidence_tier": "official"}
+        {"model_id": "gemini-omni-flash-preview", "shutdown_date": "2026-09-30", "recommended_replacement": "gemini-omni-1.1-flash", "router_status": "blocked_do_not_route", "evidence_tier": "official"},
+        {"model_id": "gemini-robotics-er-1.6-preview", "shutdown_date": "2026-08-31", "recommended_replacement": "gemini-robotics-er-2-preview", "router_status": "blocked_do_not_route", "evidence_tier": "official"}
       ],
       "primary_sources": [
         "https://ai.google.dev/gemini-api/docs/models",
+        "https://ai.google.dev/gemini-api/docs/changelog",
+        "https://ai.google.dev/gemini-api/docs/deprecations",
+        "https://ai.google.dev/gemini-api/docs/pricing",
         "https://ai.google.dev/gemini-api/docs/video-understanding",
         "https://ai.google.dev/gemini-api/docs/long-context",
         "https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/video-understanding"
