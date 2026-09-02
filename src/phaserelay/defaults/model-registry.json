@@ -1,6 +1,6 @@
 {
-  "version": "0.2.11",
-  "last_refreshed": "2026-08-31",
+  "version": "0.2.12",
+  "last_refreshed": "2026-09-02",
   "refresh_frequency": "daily_light_weekly_deep",
   "models": [
     {
@@ -51,12 +51,14 @@
     {
       "provider": "Anthropic",
       "surface": ["Claude", "Claude Code", "API"],
-      "models_or_family": ["Claude Fable 5", "Claude Opus 5", "Claude Opus 4.8", "Claude Sonnet 5", "Claude Mythos 5", "Claude Haiku 4.5"],
+      "models_or_family": ["Claude Fable 5.1", "Claude Fable 5", "Claude Opus 5", "Claude Opus 4.8", "Claude Sonnet 5", "Claude Mythos 5.1", "Claude Mythos 5", "Claude Haiku 4.5"],
       "current_models": [
+        {"model_id": "claude-fable-5-1", "role": "demanding reasoning and long-horizon agentic work when Opus 5 high effort is insufficient", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 10, "output_usd_per_mtok": 50, "cache_write_usd_per_mtok": 12.5, "cache_write_1h_usd_per_mtok": 20, "cache_read_usd_per_mtok": 0.25, "batch_input_usd_per_mtok": 5, "batch_output_usd_per_mtok": 25, "input_modalities": ["text", "image"], "output_modalities": ["text"], "default_effort": "high", "thinking": "adaptive_always_on", "comparative_latency": "slower", "training_data_cutoff": "2026-06", "api_notes": ["forced tool use returns an error", "earlier Claude models cannot read Fable 5.1 thinking blocks", "editing earlier turns invalidates thinking blocks", "per-message effort, turn-scoped system messages, and readable progress updates are beta features", "content provenance is supported"], "availability": ["Claude API", "Amazon Bedrock", "Google Cloud", "Microsoft Foundry", "Claude Platform on AWS"], "earliest_retirement_date": "2027-09-01", "evidence_tier": "official", "router_status": "candidate_requires_access_probe_privacy_review_and_bakeoff"},
         {"model_id": "claude-fable-5", "role": "highest available capability and long-running agents", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 10, "output_usd_per_mtok": 50, "cache_write_usd_per_mtok": 12.5, "cache_read_usd_per_mtok": 1, "data_retention_requirement_days": 30, "zero_data_retention_supported": false, "api_notes": ["adaptive thinking is always on", "manual thinking budgets, disabled thinking, and assistant prefill return HTTP 400"], "earliest_retirement_date": "2027-06-09", "evidence_tier": "official", "router_status": "candidate_requires_access_probe_privacy_review_and_bakeoff"},
         {"model_id": "claude-opus-5", "role": "complex agentic coding and enterprise work", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 5, "output_usd_per_mtok": 25, "cache_write_usd_per_mtok": 6.25, "cache_read_usd_per_mtok": 0.5, "api_notes": ["thinking is on by default", "effort supports low, medium, high, xhigh, and max", "disabled thinking with xhigh or max returns HTTP 400"], "earliest_retirement_date": "2027-07-24", "evidence_tier": "official", "router_status": "candidate"},
         {"model_id": "claude-opus-4-8", "role": "prior-generation high-capability agentic work", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 5, "output_usd_per_mtok": 25, "cache_write_usd_per_mtok": 6.25, "cache_read_usd_per_mtok": 0.5, "api_notes": ["effort defaults to high", "non-default temperature, top_p, or top_k values return HTTP 400"], "earliest_retirement_date": "2027-05-28", "evidence_tier": "official", "router_status": "candidate_requires_access_probe_and_bakeoff"},
         {"model_id": "claude-sonnet-5", "role": "speed-intelligence balance for coding and agents", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 10, "pricing_status": "standard_as_of_2026-08-10", "scheduled_price_increase_cancelled": true, "cache_write_usd_per_mtok": 2.5, "cache_read_usd_per_mtok": 0.2, "tokenizer_note": "approximately 30% more tokens for the same text than the prior tokenizer", "api_notes": ["adaptive thinking is the default", "manual extended thinking is removed and returns HTTP 400", "non-default temperature, top_p, or top_k values return HTTP 400"], "priority_tier_supported": false, "earliest_retirement_date": "2027-06-30", "evidence_tier": "official", "router_status": "candidate"},
+        {"model_id": "claude-mythos-5-1", "role": "invitation-only defensive cybersecurity variant of Fable 5.1", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 10, "output_usd_per_mtok": 50, "cache_write_usd_per_mtok": 12.5, "cache_write_1h_usd_per_mtok": 20, "cache_read_usd_per_mtok": 0.25, "batch_input_usd_per_mtok": 5, "batch_output_usd_per_mtok": 25, "input_modalities": ["text", "image"], "output_modalities": ["text"], "default_effort": "high", "thinking": "adaptive_always_on", "training_data_cutoff": "2026-06", "availability": "limited_invitation_only_project_glasswing", "earliest_retirement_date": "2027-09-01", "evidence_tier": "official", "router_status": "candidate_requires_invitation_security_scope_and_bakeoff"},
         {"model_id": "claude-mythos-5", "role": "invitation-only defensive cybersecurity workflows", "context_tokens": 1000000, "max_output_tokens": 128000, "input_usd_per_mtok": 10, "output_usd_per_mtok": 50, "cache_write_usd_per_mtok": 12.5, "cache_read_usd_per_mtok": 1, "availability": "limited_invitation_only_project_glasswing", "api_notes": ["adaptive thinking is always on", "manual thinking budgets, disabled thinking, and assistant prefill return HTTP 400"], "evidence_tier": "official", "router_status": "candidate_requires_invitation_security_scope_and_bakeoff"},
         {"model_id": "claude-haiku-4-5-20251001", "role": "fast cost-efficient work", "input_usd_per_mtok": 1, "output_usd_per_mtok": 5, "cache_write_usd_per_mtok": 1.25, "cache_read_usd_per_mtok": 0.1, "earliest_retirement_date": "2026-10-15", "evidence_tier": "official"}
       ],
@@ -75,6 +77,10 @@
         {"model_id": "claude-sonnet-4-20250514", "status": "retired", "retirement_date": "2026-06-15", "evidence_tier": "official"}
       ],
       "primary_sources": [
+        "https://platform.claude.com/docs/en/models/fable-5-1/overview",
+        "https://platform.claude.com/docs/en/about-claude/models/overview",
+        "https://platform.claude.com/docs/en/about-claude/pricing",
+        "https://platform.claude.com/docs/en/release-notes/overview",
         "https://docs.anthropic.com/en/docs/about-claude/models/overview",
         "https://www.anthropic.com/pricing",
         "https://docs.anthropic.com/en/docs/claude-code/overview"
