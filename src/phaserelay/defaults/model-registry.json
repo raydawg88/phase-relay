@@ -1,6 +1,6 @@
 {
-  "version": "0.2.12",
-  "last_refreshed": "2026-09-02",
+  "version": "0.2.13",
+  "last_refreshed": "2026-09-03",
   "refresh_frequency": "daily_light_weekly_deep",
   "models": [
     {
@@ -92,9 +92,11 @@
     {
       "provider": "Google",
       "surface": ["Gemini", "Gemini API", "Vertex AI", "Flow/Veo where available"],
-      "models_or_family": ["Gemini 3.7 Flash", "Gemini 3.6 Flash", "Gemini 3.5 Flash", "Gemini 3.5 Flash-Lite", "Gemini 3.1 Pro", "Gemini 3.1 Flash Lite Image", "Gemini 3 Pro Image", "Gemini Robotics ER 2", "Nano Banana 2 family", "Gemini Omni Flash", "Veo", "Lyria 3.5"],
+      "models_or_family": ["Gemini 3.8 Flash", "Gemini 3.8 Flash Cyber", "Gemini 3.7 Flash", "Gemini 3.6 Flash", "Gemini 3.5 Flash", "Gemini 3.5 Flash-Lite", "Gemini 3.1 Pro", "Gemini 3.1 Flash Lite Image", "Gemini 3 Pro Image", "Gemini Robotics ER 2", "Nano Banana 2 family", "Gemini Omni Flash", "Veo", "Lyria 3.5"],
       "current_models": [
-        {"model_id": "gemini-3.7-flash", "role": "newest multimodal coding and agent workhorse", "context_tokens": 1048576, "max_output_tokens": 65536, "modalities": ["text", "image", "video", "audio", "PDF"], "api_notes": ["thinking supports low, medium, and high; minimal returns an error", "computer use is preview"], "pricing_status": "introductory_through_2026-12-31", "router_status": "candidate_requires_access_check_and_bakeoff", "evidence_tier": "official"},
+        {"model_id": "gemini-3.8-flash", "role": "long-horizon software engineering autonomous agents and complex enterprise workflows", "context_tokens": 1048576, "max_output_tokens": 65536, "input_modalities": ["text", "image", "video", "audio", "PDF"], "output_modalities": ["text"], "thinking_levels": ["low", "medium", "high"], "default_thinking_level": "medium", "unsupported_thinking_levels": ["minimal"], "input_usd_per_mtok": 0.75, "output_usd_per_mtok": 3.75, "cache_read_usd_per_mtok": 0.075, "cache_storage_usd_per_mtok_hour": 0.5, "batch_input_usd_per_mtok": 0.375, "batch_output_usd_per_mtok": 1.875, "introductory_pricing_ends": "2026-12-31", "standard_pricing_from_2027_01_01": {"input_usd_per_mtok": 1.5, "output_usd_per_mtok": 7.5, "cache_read_usd_per_mtok": 0.15, "cache_storage_usd_per_mtok_hour": 1}, "free_api_tier": true, "free_tier_data_use": "may_be_used_to_improve_google_products", "paid_tier_data_use": "not_used_to_improve_google_products", "capabilities": ["caching", "code_execution", "computer_use_preview", "file_search", "function_calling", "Google Maps grounding", "Google Search grounding", "structured_outputs", "URL context"], "knowledge_cutoff": "2026-03_with_some_domains_limited_to_2025-01", "availability": ["Gemini app for Google AI Pro and Ultra", "Gemini API", "Google AI Studio", "Gemini Enterprise Agent Platform", "Google Antigravity", "Google AI Mode"], "api_notes": ["can use more reasoning and tool tokens on difficult long-running tasks by design", "lower thinking effort is recommended when the extra verification is unnecessary", "occasional slowness or timeout issues are documented"], "router_status": "candidate_requires_access_check_token_budget_and_bakeoff", "evidence_tier": "official"},
+        {"model_name": "Gemini 3.8 Flash Cyber", "exact_model_id_status": "not_published_in_public_api_catalog", "role": "restricted defensive vulnerability discovery verification and automated patching", "availability": "limited_to_approved_Fairwind_Program_trusted_defenders", "access_scope": ["government and national cyber authorities", "critical infrastructure operators", "core technology platforms", "approved cybersecurity incident response and penetration testing teams"], "permitted_use": ["authorized threat simulation", "reverse engineering", "malware analysis for defensive or academic research"], "router_status": "candidate_requires_fairwind_eligibility_access_approval_and_security_scope", "evidence_tier": "official"},
+        {"model_id": "gemini-3.7-flash", "role": "high-speed multimodal coding and agent workhorse", "context_tokens": 1048576, "max_output_tokens": 65536, "modalities": ["text", "image", "video", "audio", "PDF"], "api_notes": ["thinking supports low, medium, and high; minimal returns an error", "computer use is preview"], "pricing_status": "introductory_through_2026-12-31", "router_status": "candidate_requires_access_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "gemini-3.6-flash", "role": "recommended computer-use and agent model", "api_notes": ["temperature, top_p, and top_k are deprecated", "prefilled model turns are unsupported"], "router_status": "candidate", "evidence_tier": "official"},
         {"model_id": "gemini-3.5-flash", "role": "stable agentic coding and multimodal analysis", "context_tokens": 1048576, "max_output_tokens": 65536, "router_status": "candidate", "evidence_tier": "official"},
         {"model_id": "gemini-3.5-flash-lite", "role": "low-latency cost-efficient agent work", "api_notes": ["temperature, top_p, and top_k are deprecated", "prefilled model turns are unsupported"], "router_status": "candidate", "evidence_tier": "official"},
@@ -106,6 +108,9 @@
         {"model_id": "gemini-3.5-transcribe-live", "role": "low-latency bidirectional streaming speech transcription over WebSockets", "audio_input_usd_per_mtok": 3.5, "text_output_usd_per_mtok": 21, "estimated_blended_usd_per_minute": 0.009, "router_status": "candidate_requires_access_cost_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "gemini-robotics-er-2-preview", "role": "robotics spatial reasoning tool orchestration and video moment finding", "modalities": ["text", "image", "video", "audio"], "router_status": "candidate_requires_specialized_access_check_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "gemini-robotics-er-2-streaming-preview", "role": "low-latency streaming robot agents with bidirectional audio and video", "modalities": ["text", "image", "video", "audio"], "router_status": "candidate_requires_specialized_access_check_and_bakeoff", "evidence_tier": "official"}
+      ],
+      "platform_capabilities": [
+        {"capability_id": "gemini-agentic-video-understanding", "status": "active", "supported_models": ["gemini-3.7-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite"], "supported_apis": ["Interactions API", "GenerateContent API"], "behavior": "dynamically navigates the timeline and selectively requests transcripts frames or audio at adaptive frame rates and resolutions", "documented_long_form_token_reduction": "up_to_88_percent_vs_static_processing", "documented_long_form_quality_change": "about_7_percent_higher", "tradeoff": "may increase time to first token for videos shorter than five minutes", "static_mode_note": "default static processing samples video at 1 FPS; use extracted frames for claims requiring every frame", "telemetry_fields": ["total_thought_tokens", "total_tool_use_tokens"], "routing_relevance": "prefer agentic mode for long-form targeted video questions; retain deterministic frame extraction for frame-complete inspection", "evidence_tier": "official"}
       ],
       "deprecations": [
         {"model_id": "gemini-3-flash-preview", "recommended_replacement": "gemini-3.6-flash", "evidence_tier": "official"},
@@ -121,12 +126,16 @@
       ],
       "primary_sources": [
         "https://ai.google.dev/gemini-api/docs/models",
+        "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+        "https://ai.google.dev/gemini-api/docs/generate-content/latest-model",
         "https://ai.google.dev/gemini-api/docs/changelog",
         "https://ai.google.dev/gemini-api/docs/deprecations",
         "https://ai.google.dev/gemini-api/docs/pricing",
         "https://ai.google.dev/gemini-api/docs/video-understanding",
         "https://ai.google.dev/gemini-api/docs/long-context",
-        "https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/video-understanding"
+        "https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/video-understanding",
+        "https://deepmind.google/models/model-cards/gemini-3-8-flash/",
+        "https://deepmind.google/fairwind-program/"
       ],
       "default_lanes": ["video_analysis", "long_context", "multimodal_analysis", "video_generation"],
       "confidence": "medium",
@@ -217,16 +226,26 @@
     {
       "provider": "Cross-provider media routers",
       "surface": ["OpenRouter Image API", "OpenRouter Video API", "Runway MCP", "Runway Agent"],
-      "models_or_family": ["Runway Gen-4.5", "Runway Aleph 2.0", "Seedance 2.0", "Kling 3.0", "FLUX 3 Video", "GPT Image 2", "Nano Banana", "provider-routed video models"],
+      "models_or_family": ["Runway Gen-4.5", "Runway Aleph 2.0", "WAN 3.0", "Seedance 2.5", "Seedance 2.0", "Muse Image", "Kling 3.0", "FLUX 3 Video", "GPT Image 2", "Nano Banana", "provider-routed video models"],
       "current_candidates": [
         {"model_family": "FLUX 3 Video", "provider": "Black Forest Labs", "role": "text-to-video image-to-video and video continuation with native audio", "max_duration_seconds": 20, "resolution": "HD and Full HD", "pricing_usd_per_second": {"text_or_image_to_video_full_render_hd": 0.17, "text_or_image_to_video_full_render_fhd": 0.29, "text_or_image_to_video_draft_hd": 0.06, "video_continuation_full_render_hd": 0.43, "video_continuation_full_render_fhd": 0.54, "video_continuation_draft_hd": 0.12}, "availability": "BFL API and playground", "exact_endpoint_id_status": "not_confirmed_in_accessible_official_docs", "router_status": "candidate_requires_access_cost_check_and_rendered_bakeoff", "evidence_tier": "official"},
-        {"model_id": "flux-3-upscale", "provider": "Black Forest Labs", "role": "regenerative video upscaling and repair from 480p through native 4K", "upscale_factors": [1.5, 2, 3], "modes": [{"name": "precise", "steps": 4, "usd_per_megapixel_second": 0.07, "identity_consistency": "higher"}, {"name": "creative", "steps": 8, "usd_per_megapixel_second": 0.1, "identity_consistency": "lower"}], "availability": "BFL API and playground", "router_status": "candidate_requires_access_cost_check_and_rendered_bakeoff", "evidence_tier": "official"}
+        {"model_id": "flux-3-upscale", "provider": "Black Forest Labs", "role": "regenerative video upscaling and repair from 480p through native 4K", "upscale_factors": [1.5, 2, 3], "modes": [{"name": "precise", "steps": 4, "usd_per_megapixel_second": 0.07, "identity_consistency": "higher"}, {"name": "creative", "steps": 8, "usd_per_megapixel_second": 0.1, "identity_consistency": "lower"}], "availability": "BFL API and playground", "router_status": "candidate_requires_access_cost_check_and_rendered_bakeoff", "evidence_tier": "official"},
+        {"model_id": "wan3", "provider": "Alibaba via Runway Dev", "role": "reference-driven text-to-video and image-to-video with native audio and first-last keyframes", "max_duration_seconds": 30, "resolutions": ["480p", "720p", "1080p"], "pricing_usd_per_second": {"480p": 0.05, "720p": 0.1, "1080p": 0.2}, "release_date_on_runway_dev": "2026-08-26", "router_status": "candidate_requires_runway_access_cost_check_and_rendered_bakeoff", "evidence_tier": "official_router_catalog"},
+        {"model_id": "seedance2_5", "provider": "ByteDance via Runway Dev", "role": "multimodal text image or video conditioned generation with native audio", "resolutions": ["480p", "720p", "1080p"], "pricing_usd_per_second": {"480p_output": 0.2, "480p_input_or_reference_video": 0.1, "720p_output": 0.3, "720p_input_or_reference_video": 0.15, "1080p_output": 0.68, "1080p_input_or_reference_video": 0.34}, "minimum_generation_usd": 0.8, "router_status": "candidate_requires_runway_access_cost_check_and_rendered_bakeoff", "evidence_tier": "official_router_catalog"},
+        {"model_id": "muse_image", "provider": "Meta via Runway Dev", "role": "low-cost text-to-image generation editing and compositing with optional references", "max_reference_images": 10, "max_outputs_per_request": 10, "price_usd_per_image": 0.01, "release_date_on_runway_dev": "2026-08-26", "router_status": "candidate_requires_runway_access_cost_check_and_rendered_bakeoff", "evidence_tier": "official_router_catalog"}
+      ],
+      "platform_capabilities": [
+        {"capability_id": "runway-dev-model-router", "status": "active", "modalities": ["video", "image", "audio"], "optimization_preferences": ["cost", "latency", "quality"], "controls": ["model allow list", "model deny list", "per-modality credit ceilings", "dry-run route preview"], "telemetry": ["resolved model", "realized credit cost"], "routing_relevance": "provider-side media routing with spend ceilings and inspectable realized selections", "router_status": "candidate_requires_runway_account_privacy_review_and_capped_bakeoff", "evidence_tier": "official"},
+        {"capability_id": "runway-acescg-exr-delivery", "status": "active", "supported_surfaces": ["Gen-4.5 HDR generation", "SDR-to-HDR endpoint"], "formats": ["hdr_exr_acescg_sequence_1_3", "hdr_exr_acescg_sequence_2_0"], "pricing_note": "same 20 or 40 credits per second as other HDR profiles depending on output size", "routing_relevance": "deliver scene-referred ACEScg sequences directly into professional compositing pipelines", "evidence_tier": "official"}
       ],
       "primary_sources": [
         "https://openrouter.ai/blog/announcements/image-api/",
         "https://openrouter.ai/blog/announcements/video-generation/",
         "https://runwayml.com/news/company-news/mcp",
         "https://runwayml.com/news/introducing-aleph-2-and-edit-studio",
+        "https://docs.dev.runwayml.com/api-details/api_changelog/",
+        "https://docs.dev.runwayml.com/guides/models/",
+        "https://docs.dev.runwayml.com/guides/pricing/",
         "https://bfl.ai/blog/flux-video-upscale",
         "https://docs.bfl.ai/flux_tools/flux_video_upscale",
         "https://help.bfl.ai/articles/7986977817-what-are-the-costs-associated-with-using-your-models"
