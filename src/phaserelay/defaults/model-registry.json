@@ -1,13 +1,14 @@
 {
-  "version": "0.2.13",
-  "last_refreshed": "2026-09-03",
+  "version": "0.2.14",
+  "last_refreshed": "2026-09-04",
   "refresh_frequency": "daily_light_weekly_deep",
   "models": [
     {
       "provider": "OpenAI",
       "surface": ["ChatGPT", "Codex", "API", "image/video where available"],
-      "models_or_family": ["GPT-5.6 Sol", "GPT-5.6 Terra", "GPT-5.6 Luna", "GPT-5.6 Cyber", "Daybreak", "GPT Image 2", "GPT-Realtime 2.1 family", "realtime transcription and translation", "Sora where available"],
+      "models_or_family": ["GPT-6 Astra", "GPT-6 Astra Pro", "GPT-5.6 Sol", "GPT-5.6 Terra", "GPT-5.6 Luna", "GPT-5.6 Cyber", "Daybreak", "GPT Image 2", "GPT-Realtime 2.1 family", "realtime transcription and translation", "Sora where available"],
       "current_models": [
+        {"model_id": "gpt-6-astra", "role": "hardest end-to-end reasoning coding computer-use research and professional artifact work", "context_tokens": 1050000, "max_output_tokens": 128000, "knowledge_cutoff": "2026-04-30", "input_usd_per_mtok": 10, "cached_input_usd_per_mtok": 1, "cache_write_usd_per_mtok": 12.5, "output_usd_per_mtok": 50, "long_context_threshold_tokens": 272000, "long_context_price_multiplier": {"input": 2, "cached_input": 2, "cache_write": 2, "output": 1.5}, "batch_and_flex_discount_percent": 50, "fast_mode_price_multiplier": 2, "input_modalities": ["text", "image"], "output_modalities": ["text"], "reasoning_efforts": ["low", "medium", "high", "xhigh", "max"], "unsupported_reasoning_efforts": ["none"], "supported_api_surfaces": ["Responses API", "Chat Completions", "Batch API"], "tool_calling_surface": "Responses API required", "capabilities": ["asynchronous tool calling", "mid-turn steering", "reasoning configuration updates with cache preservation", "computer use", "web search", "file search", "image generation", "code interpreter", "hosted shell", "apply patch", "skills", "MCP", "tool search"], "migration_notes": ["temperature, top_p, and top_logprobs are unsupported", "tool calling requires the Responses API", "Fast is unavailable with EU data residency", "audit AGENTS and skills because behavior is more instruction-sensitive", "explicitly request delegation when multi-agent execution is desired"], "availability": ["Trusted Access Program enterprises at launch", "OpenAI API staged rollout", "ChatGPT Plus, Pro, Business, and Enterprise staged rollout", "Microsoft Azure", "AWS Bedrock"], "subscription_note": "included within existing ChatGPT plan allowances when available; credits can purchase more usage", "zero_data_retention": "supported for eligible API customers", "router_status": "candidate_requires_access_probe_token_budget_privacy_review_and_bakeoff", "evidence_tier": "official"},
         {"model_id": "gpt-5.6-sol", "role": "flagship complex reasoning and coding", "context_tokens": 1050000, "max_output_tokens": 128000, "input_usd_per_mtok": 4, "output_usd_per_mtok": 20, "pricing_status": "promotional_through_at_least_2026-11-21", "evidence_tier": "official"},
         {"model_id": "gpt-5.6-terra", "role": "balanced intelligence and cost", "context_tokens": 1050000, "max_output_tokens": 128000, "input_usd_per_mtok": 2, "output_usd_per_mtok": 12, "evidence_tier": "official"},
         {"model_id": "gpt-5.6-luna", "role": "cost-sensitive high-volume work", "context_tokens": 1050000, "max_output_tokens": 128000, "input_usd_per_mtok": 0.2, "output_usd_per_mtok": 1.2, "evidence_tier": "official"},
@@ -20,6 +21,8 @@
         {"model_id": "gpt-image-2", "role": "image generation and editing", "api_notes": ["transparent PNG and WebP backgrounds are available in preview through the Images and Responses APIs"], "evidence_tier": "official"}
       ],
       "platform_capabilities": [
+        {"capability_id": "gpt-6-astra-pro-plan-entitlement", "status": "announced_staged_rollout", "eligible_plans": ["ChatGPT Pro", "Business", "Enterprise"], "exact_api_model_id_status": "not published in the accessible official API catalog", "routing_relevance": "potential highest-compute review lane after access verification and bakeoff", "router_status": "candidate_requires_rollout_access_probe_and_bakeoff", "evidence_tier": "official"},
+        {"capability_id": "codex-astra-cross-context-notes-search", "status": "experimental", "behavior": "preserve notes and search earlier context windows", "rollout": "configuration opt-in at launch with default rollout planned in coming weeks", "routing_relevance": "reduce compaction loss in long coding projects", "router_status": "candidate_requires_codex_model_availability_and_configuration_review", "evidence_tier": "official"},
         {"capability_id": "openai-prompt-caching-dashboard", "status": "active", "metrics": ["cache hit rate", "cache reads per write", "cache-read tokens", "cache-write tokens", "uncached tokens"], "filters": ["model", "service tier"], "routing_relevance": "identify repeated context and verify cache savings by model", "evidence_tier": "official"},
         {"capability_id": "openai-request-level-regional-processing", "status": "active_for_eligible_projects", "requirements": ["API key from a project with Global geography", "supported endpoint and model", "existing data retention eligibility"], "routing_relevance": "select regional processing for an individual eligible request without changing the project default", "evidence_tier": "official"}
       ],
@@ -40,6 +43,9 @@
         {"system_id": "assistants-api", "status": "shut_down", "shutdown_date": "2026-08-26", "recommended_replacement": "Responses API and Conversations API", "router_status": "blocked_do_not_route", "evidence_tier": "official"}
       ],
       "primary_sources": [
+        "https://developers.openai.com/api/docs/models/gpt-6-astra",
+        "https://developers.openai.com/api/docs/guides/latest-model",
+        "https://openai.com/index/gpt-6-astra/",
         "https://platform.openai.com/docs/models",
         "https://platform.openai.com/docs/guides/images",
         "https://chatgpt.com/pricing"
