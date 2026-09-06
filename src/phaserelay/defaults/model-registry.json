@@ -1,6 +1,6 @@
 {
-  "version": "0.2.15",
-  "last_refreshed": "2026-09-05",
+  "version": "0.2.16",
+  "last_refreshed": "2026-09-06",
   "refresh_frequency": "daily_light_weekly_deep",
   "models": [
     {
@@ -69,6 +69,7 @@
         {"model_id": "claude-haiku-4-5-20251001", "role": "fast cost-efficient work", "input_usd_per_mtok": 1, "output_usd_per_mtok": 5, "cache_write_usd_per_mtok": 1.25, "cache_read_usd_per_mtok": 0.1, "earliest_retirement_date": "2026-10-15", "evidence_tier": "official"}
       ],
       "platform_capabilities": [
+        {"capability_id": "anthropic-ant-apply-resources-as-code", "status": "available_in_ant_cli_1_30_0", "managed_resources": ["agents", "environments", "skills", "memory stores", "deployments"], "source_formats": ["Markdown", "YAML", "JSON", "skill directories"], "state_file": "claude-lock.json", "controls": ["interactive plan approval", "dry-run", "noninteractive yes", "force overwrite", "prune", "pinned GitHub skill references", "organization and workspace identity check"], "ci_guidance": ["use dry-run on pull requests", "apply one run at a time", "commit the lockfile even after a partial apply", "prefer workload identity federation"], "risk_notes": ["dry-run exits zero even when the plan is blocked", "yes can create or update live API resources", "force can overwrite out-of-band changes", "prune can archive resources or delete skills", "lockfiles contain organization workspace and resource identifiers"], "local_access_status": "ant executable not found during the 2026-09-06 audit", "routing_relevance": "declarative reproducible Claude-side agent and skill deployment with reviewable plans and stable resource identity", "router_status": "candidate_requires_installation_authentication_private_repo_policy_dry_run_and_human_approval_before_apply", "evidence_tier": "official"},
         {"capability_id": "claude-files-api", "status": "generally_available", "storage_per_organization": "1 TB", "rate_limit_rpm": 500, "routing_relevance": "upload-once file reuse and expiring corpus inputs", "evidence_tier": "official"},
         {"capability_id": "claude-agent-skills-api", "status": "generally_available", "api_path": "/v1/skills", "routing_relevance": "load reusable skills through Messages containers and Managed Agents", "evidence_tier": "official"},
         {"capability_id": "claude-managed-agents-domain-controls", "status": "active", "controls": ["allowed_domains", "blocked_domains", "max_content_tokens"], "routing_relevance": "bounded research and lower fetched-context usage", "evidence_tier": "official"},
@@ -87,6 +88,7 @@
         "https://platform.claude.com/docs/en/about-claude/models/overview",
         "https://platform.claude.com/docs/en/about-claude/pricing",
         "https://platform.claude.com/docs/en/release-notes/overview",
+        "https://platform.claude.com/docs/en/cli-sdks-libraries/cli/apply",
         "https://docs.anthropic.com/en/docs/about-claude/models/overview",
         "https://www.anthropic.com/pricing",
         "https://docs.anthropic.com/en/docs/claude-code/overview"
